@@ -1,11 +1,19 @@
 #!/bin/bash
 
+COLOR_NC='\033[0m'
+COLOR_GREEN='\033[0;32m'
+COLOR_YELLOW='\033[0;33m'
+
 printf "Creating links to dotfiles"
-cd ~/
-ln -s dotfiles/.bash_profile 
-ln -s dotfiles/.vimrc 
+printf "\n"
+
+#cd ~/
+# ln -s dotfiles/.bash_profile 
+# ln -s dotfiles/.vimrc 
 
 printf "Initializing and updating git submodules..."
+printf "\n"
+
 if (cd $(dirname $0) && git submodule sync &> /dev/null && git submodule update --init &> /dev/null); then
   printf "\r$COLOR_GREEN"
   printf "Submodules successfully initialized & updated.\n"
@@ -14,5 +22,4 @@ else
   printf "Submodules could not be initialized/updated.\n"
 fi
 
-#Install pathogen
-#mkdir -p ~/.
+printf $COLOR_NC
