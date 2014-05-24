@@ -1,0 +1,9 @@
+options(prompt="R> ", digits=4, show.signif.stars=FALSE)
+source("~/.rprofile.local")
+
+.Last <- function() {
+        if (!any(commandArgs()=='--no-readline') && interactive()){
+                require(utils)
+                try(savehistory(Sys.getenv("R_HISTFILE")))
+        }
+}

@@ -13,3 +13,4 @@ parse_git_branch() {
 export -f parse_git_branch
 export PS1="\W \[\033[33m\]\$(parse_git_branch)\[\033[00m\]\[\033[00m\] "
 
+export R_HISTFILE=~/.Rhistory

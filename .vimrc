@@ -1,8 +1,8 @@
 " Michael's Vim Profile
+source ~/.vim/bundle/pathogen/autoload/pathogen.vim
 
 " Run pathogen
-" execute pathogen#infect()
-
+execute pathogen#infect()
 
 " Set font and size
 set guifont=Menlo:h16
@@ -23,7 +23,9 @@ imap jk <esc>
 xnoremap p pgvy
 
 " Set indent to 4 spaces
+set tabstop=4
 set sw=4
+set expandtab
 
 " Highlight the last searched pattern:
 set hlsearch
@@ -36,4 +38,7 @@ autocmd FileType vim let b:comment_leader= '" '
 nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
 nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
 nnoremap <silent><D-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
-nnoremap <silent><D-j> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+nnoremap <silent><D-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+
+"Nerd tree
+map \ :NERDTreeToggle<CR>
