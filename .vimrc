@@ -33,7 +33,11 @@ set showmode
 set cursorline
 "Show column and line number at bottom right
 set ruler
-set nu 
+"Relative line numbers
+set rnu 
+"ctrl+n toggles relative line numbers on and off
+nnoremap <C-n> <leader>:set rnu! rnu?<CR>
+
 "Set colorscheme
 set background=dark
 colorscheme solarized
@@ -97,8 +101,23 @@ nmap <Leader><Leader> V
 vmap <tab> >gv
 vmap <s-tab> <gv
 
+"Enable omni completion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+"Remap <C-P> to <C-p>
+"Use ctrl+p to autocomplete from insert mode
+imap <C-p> <C-P>
+
 "###################################
 "Plugins
 "###################################
 "Nerd tree
 map \ :NERDTreeToggle<CR>
+
+"###################################
+"Source local .vimrc
+"###################################
+if filereadable($HOME . "/.vimrc_local")
+  source ~/.vimrc_local
+endif
