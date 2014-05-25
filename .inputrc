@@ -1,5 +1,6 @@
-set completion-ignore-case on #Ignore cases for tab completion
-
 #Up/Down arrow cycle through history based on what's already typed
 "\e[A":history-search-backward 
 "\e[B":history-search-forward
+
+#Ignore cases for tab completion
+set completion-ignore-case on 
