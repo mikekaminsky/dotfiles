@@ -14,3 +14,5 @@ To Do:
 5. Improve bash/R history so that it's not case sensitive.
 
 ~~6. Find an autocompleter~~
+
+7. Figure out how to comment automagically
