@@ -7,6 +7,13 @@ alias gmmro="git merge master -s recursive -X ours"
 alias v="mvim"
 
 
+export HISTCONTROL=erasedups  # Removes duplicate entires
+export HISTSIZE=10000  # Increase command history
+shopt -s histappend  # Ensures all history is saved
+PROMPT_COMMAND='history -a' #Record history at every command
+
+set completion-ignore-case on
+
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 }
