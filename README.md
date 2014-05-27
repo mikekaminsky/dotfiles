@@ -13,6 +13,6 @@ Run 'git submodule sync' and 'git update --init'
 
 
 To Do:
---------------------
+___________________
 
 1. Finish install.sh (set up links)
