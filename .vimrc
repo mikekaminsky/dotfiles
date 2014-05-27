@@ -94,9 +94,6 @@ vmap <Leader>P "+P
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 
-"double tap spce to start selecting stuff
-nmap <Leader><Leader> V
-
 " Indent/unindent visual mode selection with tab/shift+tab
 vmap <tab> >gv
 vmap <s-tab> <gv
@@ -114,6 +111,9 @@ imap <C-p> <C-P>
 "###################################
 "Nerd tree
 map \ :NERDTreeToggle<CR>
+
+"Double tap space to comment
+map <leader><leader> <plug>NERDCommenterToggle
 
 "###################################
 "Source local .vimrc

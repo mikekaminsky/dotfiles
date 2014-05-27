@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#Need to:
+#1. Move local .vimrc/.rprofile/.bash_profile to 
+#   .vimrc.local etc.
+
+
 COLOR_NC='\033[0m'
 COLOR_GREEN='\033[0;32m'
 COLOR_YELLOW='\033[0;33m'
