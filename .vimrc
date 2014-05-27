@@ -101,6 +101,7 @@ vmap <s-tab> <gv
 "Enable omni completion
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+set completeopt=longest,menuone
 
 "Remap <C-P> to <C-p>
 "Use ctrl+p to autocomplete from insert mode
@@ -119,5 +120,5 @@ map <leader><leader> <plug>NERDCommenterToggle
 "Source local .vimrc
 "###################################
 if filereadable($HOME . "/.vimrc_local")
-  source ~/.vimrc_local
+  source ~/.vimrc.local
 endif
