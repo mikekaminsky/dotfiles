@@ -35,8 +35,19 @@ set cursorline
 set ruler
 "Relative line numbers
 set rnu 
-"ctrl+n toggles relative line numbers on and off
-nnoremap <C-n> <leader>:set rnu! rnu?<CR>
+
+"ctrl+h toggles relative line numbers on and off
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+    set number
+  else
+    set nonumber
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-h> :call NumberToggle()<cr>
 
 "Set colorscheme
 set background=dark
@@ -106,6 +117,7 @@ set completeopt=longest,menuone
 "Remap <C-P> to <C-p>
 "Use ctrl+p to autocomplete from insert mode
 imap <C-p> <C-P>
+imap <C-n> <C-N>
 
 "###################################
 "Plugins
