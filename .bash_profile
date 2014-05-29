@@ -1,4 +1,4 @@
-export EDITOR="vi"
+export EDITOR="vim"
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit"
