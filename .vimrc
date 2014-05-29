@@ -23,6 +23,10 @@ cmap WQ wq
 cmap wQ wq
 cmap Q q
 
+"Set spell check for text files
+autocmd FileType gitcommit,mail,mkd,text set spell
+
+
 "###################################
 "Environment
 "###################################
@@ -67,9 +71,11 @@ set incsearch
 "clearing highlighted search using "<space> /"
 nmap <silent> <leader>/ :nohlsearch<CR>
 
-"Highlight extra whitespace
-highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
-match ExtraWhitespace /\s\+$/
+"Show whitespace that includes trailing whitespace.
+"highlight ExtraWhitespace ctermbg=darkgreen guibg=DarkCyan
+nnoremap <Leader>wn :match ExtraWhitespace /\s\+\%#\@<!$/<CR>
+nnoremap <Leader>wf :match<CR>
+autocmd BufWinEnter * call clearmatches()
 
 "###################################
 "Editing
@@ -85,6 +91,7 @@ set expandtab
 set tabstop=4
 set sw=4
 set expandtab
+set smarttab
 
 " Map 'jk' to escape
 imap jk <esc>
@@ -108,6 +115,10 @@ vmap <Leader>P "+P
 
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
+
+" Map cu to change to underscore
+vmap cu ct_
+vmap cU dT_s
 
 " Indent/unindent visual mode selection with tab/shift+tab
 vmap <tab> >gv
