@@ -18,7 +18,7 @@ let mapleader = "\<Space>"
 nnoremap ; :
 
 "Stupid lazy-shift holding errors
-cmap W w                        
+cmap W w
 cmap WQ wq
 cmap wQ wq
 cmap Q q
@@ -67,13 +67,17 @@ set incsearch
 "clearing highlighted search using "<space> /"
 nmap <silent> <leader>/ :nohlsearch<CR>
 
+"Highlight extra whitespace
+highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
+match ExtraWhitespace /\s\+$/
+
 "###################################
 "Editing
 "###################################
 " Copy indent from current line when starting a new line 
 set autoindent
 " wrap long lines
-set nowrap                      
+set nowrap
 
 " In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
 " & Set indent to 4 spaces
