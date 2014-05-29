@@ -6,6 +6,7 @@ alias gco="git checkout"
 alias gp="git pull --rebase"
 alias gmmro="git merge master -s recursive -X ours"
 alias v="mvim"
+alias be="bundle exec"
 
 
 export HISTCONTROL=erasedups  # Removes duplicate entires
