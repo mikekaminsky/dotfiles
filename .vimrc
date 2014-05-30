@@ -72,7 +72,7 @@ set incsearch
 nmap <silent> <leader>/ :nohlsearch<CR>
 
 "Show whitespace that includes trailing whitespace.
-"highlight ExtraWhitespace ctermbg=darkgreen guibg=DarkCyan
+highlight ExtraWhitespace ctermbg=darkgreen guibg=DarkCyan
 nnoremap <Leader>wn :match ExtraWhitespace /\s\+\%#\@<!$/<CR>
 nnoremap <Leader>wf :match<CR>
 autocmd BufWinEnter * call clearmatches()
@@ -83,7 +83,7 @@ autocmd BufWinEnter * call clearmatches()
 " Copy indent from current line when starting a new line 
 set autoindent
 " wrap long lines
-set nowrap
+set wrap
 
 " In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
 " & Set indent to 4 spaces
@@ -117,8 +117,8 @@ vmap <Leader>P "+P
 nnoremap Y y$
 
 " Map cu to change to underscore
-vmap cu ct_
-vmap cU dT_s
+nnoremap cu ct_
+nnoremap cU dT_s
 
 " Indent/unindent visual mode selection with tab/shift+tab
 vmap <tab> >gv
