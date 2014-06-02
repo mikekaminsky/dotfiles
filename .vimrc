@@ -57,7 +57,7 @@ nnoremap <C-h> :call NumberToggle()<cr>
 set background=dark
 colorscheme solarized
 " Set font and size
-set guifont=Menlo:h16
+set guifont=Menlo:h15
 " Highlight the last searched pattern:
 set hlsearch
 " Show matching brackets and parentheses
