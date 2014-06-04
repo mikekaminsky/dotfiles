@@ -1,5 +1,8 @@
 options(prompt="R> ", digits=4, show.signif.stars=FALSE)
-source("~/.rprofile.local")
+options("width"=160)
+if (file.exists("~/.rprofile.local")){
+    source("~/.rprofile.local")
+}
 
 .Last <- function() {
         if (!any(commandArgs()=='--no-readline') && interactive()){
