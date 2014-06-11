@@ -77,6 +77,11 @@ nnoremap <Leader>wn :match ExtraWhitespace /\s\+\%#\@<!$/<CR>
 nnoremap <Leader>wf :match<CR>
 autocmd BufWinEnter * call clearmatches()
 
+"Panic Button
+"Space j takes you to the last place you edited
+nnoremap <Leader>j `.
+
+
 "###################################
 "Editing
 "###################################
@@ -143,9 +148,14 @@ map \ :NERDTreeToggle<CR>
 "Double tap space to comment
 map <leader><leader> <plug>NERDCommenterToggle
 
+"Delimitmate
+let delimitMate_matchpairs = "(:),[:],{:}"
+
 "###################################
 "Source local .vimrc
 "###################################
 if filereadable($HOME . "/.vimrc_local")
   source ~/.vimrc.local
 endif
+
+
