@@ -8,6 +8,7 @@ alias gmmro="git merge master -s recursive -X ours"
 alias v="mvim"
 alias be="bundle exec"
 
+cd() { builtin cd "$@"; ls; }
 
 export HISTCONTROL=erasedups  # Removes duplicate entires
 export HISTSIZE=10000  # Increase command history
