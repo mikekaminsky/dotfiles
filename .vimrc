@@ -70,6 +70,9 @@ set ignorecase
 set incsearch
 "clearing highlighted search using "<space> /"
 nmap <silent> <leader>/ :nohlsearch<CR>
+"Make search always go the same direction
+noremap <silent> n /<CR>
+noremap <silent> N ?<CR>
 
 "Show whitespace that includes trailing whitespace.
 highlight ExtraWhitespace ctermbg=darkgreen guibg=DarkCyan
