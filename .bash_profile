@@ -7,6 +7,8 @@ alias gp="git pull --rebase"
 alias gmmro="git merge master -s recursive -X ours"
 alias v="mvim"
 alias be="bundle exec"
+alias r="r --no-save"
+alias R="r --no-save"
 
 cd() { builtin cd "$@"; ls; }
 
