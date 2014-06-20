@@ -84,7 +84,6 @@ autocmd BufWinEnter * call clearmatches()
 "Space j takes you to the last place you edited
 nnoremap <Leader>j `.
 
-
 "###################################
 "Editing
 "###################################
@@ -148,6 +147,12 @@ set completeopt=longest,menuone
 "Use ctrl+p to autocomplete from insert mode
 imap <C-p> <C-P>
 imap <C-n> <C-N>
+
+"Make it easier to navigate to first non-blank character in a line
+nnoremap <Leader>0 ^
+
+"use space j to provide the opposite of shift j
+map <Leader>j i<CR><Esc>
 
 "###################################
 "Plugins
