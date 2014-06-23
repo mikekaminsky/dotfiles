@@ -9,7 +9,7 @@ Rename any dotfiles you are currently using (e.g., .rprofile, .vimrc, .bash_prof
 
 Create links from your ~/ directory to the dotfiles directory. ('ln -s dotfiles/.vimrc .vimrc', 'ln -s dotfiles/vim .vim' etc.)
 
-Run 'git submodule sync' and 'git update --init'
+Run 'git submodule sync' and 'git submodule update --init'
 
 
 To Do:
