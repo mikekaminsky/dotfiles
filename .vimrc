@@ -82,7 +82,7 @@ autocmd BufWinEnter * call clearmatches()
 
 "Panic Button
 "Space j takes you to the last place you edited
-nnoremap <Leader>j `.
+nnoremap <Leader>f `.
 
 "###################################
 "Editing
@@ -127,6 +127,10 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
+
+"Paste with space before
+nmap <C-p> a <esc>p
+
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 
@@ -153,6 +157,12 @@ nnoremap <Leader>0 ^
 
 "use space j to provide the opposite of shift j
 map <Leader>j i<CR><Esc>
+
+"In insert mode '\fn' inserts the file name and
+" '\fp' inserts the file path
+inoremap \fn <C-R>=expand("%:t")<CR>
+inoremap \fp <C-R>=expand("%:p:h")<CR>
+
 
 "###################################
 "Plugins
