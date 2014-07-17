@@ -26,6 +26,12 @@ cmap Q q
 "Set spell check for text files
 autocmd FileType gitcommit,mail,mkd,text set spell
 
+"prevent vim from backing up crontabs
+set backupskip=/tmp/*,/private/tmp/*
+
+"When you move away from a buffer it will go into the background 
+"it doesn't close the buffer when you close the window --needed for :Cdo
+set hidden
 
 "###################################
 "Environment
@@ -81,7 +87,7 @@ nnoremap <Leader>wf :match<CR>
 autocmd BufWinEnter * call clearmatches()
 
 "Panic Button
-"Space j takes you to the last place you edited
+"Space f takes you to the last place you edited
 nnoremap <Leader>f `.
 
 "###################################
