@@ -30,4 +30,7 @@
 	url = https://github.com/hallison/vim-markdown.git
 [submodule "vim/bundle/vim-cdo"]
 	path = vim/bundle/vim-cdo
-	url = https://github.com/Peeja/vim-cdo.git
+	url = https://github.com/mikekaminsky/vim-cdo.git
+[submodule "vim/bundle/vim-speeddating"]
+	path = vim/bundle/vim-speeddating
+	url = https://github.com/tpope/vim-speeddating
