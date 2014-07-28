@@ -18,10 +18,10 @@ let mapleader = "\<Space>"
 nnoremap ; :
 
 "Stupid lazy-shift holding errors
-cmap W w
-cmap WQ wq
-cmap wQ wq
-cmap Q q
+cnoremap W w
+cnoremap WQ wq
+cnoremap wQ wq
+cnoremap Q q
 
 "Set spell check for text files
 autocmd FileType gitcommit,mail,mkd,text set spell
@@ -75,7 +75,7 @@ set ignorecase
 " find as you type search
 set incsearch
 "clearing highlighted search using "<space> /"
-nmap <silent> <leader>/ :nohlsearch<CR>
+nnoremap <silent> <leader>/ :nohlsearch<CR>
 "Make search always go the same direction
 noremap <silent> n /<CR>
 noremap <silent> N ?<CR>
@@ -89,6 +89,12 @@ autocmd BufWinEnter * call clearmatches()
 "Panic Button
 "Space f takes you to the last place you edited
 nnoremap <Leader>f `.
+
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+
 
 "###################################
 "Editing
@@ -106,15 +112,15 @@ noremap  <buffer> <silent> 0 g0
 noremap  <buffer> <silent> $ g$
 
 " In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
-" & Set indent to 4 spaces
+" & Set indent to 2 spaces
 set expandtab
-set tabstop=4
-set sw=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set smarttab
 
 " Map 'jk' to escape
-imap jk <esc>
+inoremap jk <esc>
 
 " Allow for pasting multiple lines
 xnoremap p pgvy
@@ -126,16 +132,16 @@ nnoremap <silent><D-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 nnoremap <silent><D-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
 "Copy and paste to system clipboard with space y and space d
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
+vnoremap <Leader>y "+y
+vnoremap <Leader>d "+d
+nnoremap <Leader>p "+p
+nnoremap <Leader>P "+P
+vnoremap <Leader>p "+p
+vnoremap <Leader>P "+P
 
 
 "Paste with space before
-nmap <C-p> a <esc>p
+nnoremap <C-p> a <esc>p
 
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
@@ -145,8 +151,8 @@ nnoremap cu ct_
 nnoremap cU dT_s
 
 " Indent/unindent visual mode selection with tab/shift+tab
-vmap <tab> >gv
-vmap <s-tab> <gv
+vnoremap <tab> >gv
+vnoremap <s-tab> <gv
 
 "Enable omni completion
 filetype plugin on
@@ -155,14 +161,16 @@ set completeopt=longest,menuone
 
 "Remap <C-P> to <C-p>
 "Use ctrl+p to autocomplete from insert mode
-imap <C-p> <C-P>
-imap <C-n> <C-N>
+inoremap <C-p> <C-P>
+inoremap <C-n> <C-N>
 
 "Make it easier to navigate to first non-blank character in a line
 nnoremap <Leader>0 ^
+nnoremap H ^
+nnoremap L $
 
 "use space j to provide the opposite of shift j
-map <Leader>j i<CR><Esc>
+noremap <Leader>j i<CR><Esc>
 
 "In insert mode '\fn' inserts the file name and
 " '\fp' inserts the file path
@@ -174,10 +182,10 @@ inoremap \fp <C-R>=expand("%:p:h")<CR>
 "Plugins
 "###################################
 "Nerd tree
-map \ :NERDTreeToggle<CR>
+noremap \ :NERDTreeToggle<CR>
 
 "Double tap space to comment
-map <leader><leader> <plug>NERDCommenterToggle
+noremap <leader><leader> <plug>NERDCommenterToggle
 
 "Delimitmate
 let delimitMate_matchpairs = "(:),[:],{:}"
