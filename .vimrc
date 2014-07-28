@@ -185,7 +185,7 @@ inoremap \fp <C-R>=expand("%:p:h")<CR>
 noremap \ :NERDTreeToggle<CR>
 
 "Double tap space to comment
-noremap <leader><leader> <plug>NERDCommenterToggle
+map <leader><leader> <plug>NERDCommenterToggle
 
 "Delimitmate
 let delimitMate_matchpairs = "(:),[:],{:}"
