@@ -37,3 +37,6 @@
 [submodule "vim/bundle/l33t"]
 	path = vim/bundle/l33t
 	url = https://github.com/mikekaminsky/l33t.git
+[submodule "vim/bundle/crtlp.vim"]
+	path = vim/bundle/crtlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
