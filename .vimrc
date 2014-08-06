@@ -208,6 +208,7 @@ inoremap \fp <C-R>=expand("%:p:h")<CR>
 iabbrev adn and
 iabbrev waht what
 iabbrev tehn then
+iabbrev wiht with
 
 " My names
 iabbrev @@  kaminsky.michael@gmail.com
@@ -216,25 +217,30 @@ iabbrev myname  Michael Kaminsky
 " SQL keywords
 augroup sqlcaps
   autocmd!
-  autocmd FileType sqlanywhere iabbrev <buffer> select SELECT
-  autocmd FileType sqlanywhere iabbrev <buffer> from FROM
-  autocmd FileType sqlanywhere iabbrev <buffer> case CASE
-  autocmd FileType sqlanywhere iabbrev <buffer> when WHEN
-  autocmd FileType sqlanywhere iabbrev <buffer> where WHERE
-  autocmd FileType sqlanywhere iabbrev <buffer> join JOIN
-  autocmd FileType sqlanywhere iabbrev <buffer> on ON
-  autocmd FileType sqlanywhere iabbrev <buffer> distinct DISTINCT
-  autocmd FileType sqlanywhere iabbrev <buffer> left LEFT
-  autocmd FileType sqlanywhere iabbrev <buffer> right RIGHT
-  autocmd FileType sqlanywhere iabbrev <buffer> outer OUTER
-  autocmd FileType sqlanywhere iabbrev <buffer> set SET
-  autocmd FileType sqlanywhere iabbrev <buffer> group GROUP
-  autocmd FileType sqlanywhere iabbrev <buffer> with WITH
-  autocmd FileType sqlanywhere iabbrev <buffer> and AND
-  autocmd FileType sqlanywhere iabbrev <buffer> order ORDER
-  autocmd FileType sqlanywhere iabbrev <buffer> between BETWEEN
-  autocmd FileType sqlanywhere iabbrev <buffer> max MAX
-  autocmd FileType sqlanywhere iabbrev <buffer> min MIN
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> select SELECT
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> from FROM
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> case CASE
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> when WHEN
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> where WHERE
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> join JOIN
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> on ON
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> distinct DISTINCT
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> left LEFT
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> right RIGHT
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> outer OUTER
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> set SET
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> group GROUP
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> with WITH
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> and AND
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> order ORDER
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> between BETWEEN
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> max MAX
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> min MIN
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> interval INTERVAL
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> coalesce COALESCE
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> greatest GREATEST
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> as AS
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> end END
 augroup END
 
 "###################################
