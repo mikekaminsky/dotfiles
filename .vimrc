@@ -59,6 +59,7 @@ endfunc
 
 nnoremap <C-h> :call NumberToggle()<cr>
 
+
 "Set colorscheme
 set background=dark
 colorscheme solarized
@@ -90,10 +91,18 @@ autocmd BufWinEnter * call clearmatches()
 "Space f takes you to the last place you edited
 nnoremap <Leader>f `.
 
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-
+" <space>ev splits and edits vimrc
+" <space>sv sources vimrc
+noremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" Status line
+set laststatus=2 " Always show status line
+set statusline=%f " Path to the file
+set statusline+=%= " Switch to the right side
+set statusline+=%l " Current line
+set statusline+=/ " Separator
+set statusline+=%L " Total lines
 
 
 "###################################
