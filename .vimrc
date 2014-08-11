@@ -241,6 +241,8 @@ augroup sqlcaps
   autocmd FileType sql,sqlanywhere iabbrev <buffer> greatest GREATEST
   autocmd FileType sql,sqlanywhere iabbrev <buffer> as AS
   autocmd FileType sql,sqlanywhere iabbrev <buffer> end END
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> count COUNT
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> then THEN
 augroup END
 
 "###################################
