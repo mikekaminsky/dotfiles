@@ -243,6 +243,12 @@ augroup sqlcaps
   autocmd FileType sql,sqlanywhere iabbrev <buffer> end END
   autocmd FileType sql,sqlanywhere iabbrev <buffer> count COUNT
   autocmd FileType sql,sqlanywhere iabbrev <buffer> then THEN
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> is IS
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> not NOT
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> null NULL
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> else ELSE
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> by BY
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> sum SUM
 augroup END
 
 "###################################
