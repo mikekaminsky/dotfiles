@@ -39,6 +39,12 @@ autocmd FileType gitcommit,mail,mkd,text set spell
 autocmd BufNewFile *.sql,*.r exec "normal i\\fn \<esc>omyname\<esc>"
 autocmd FileType sql set filetype=sqlanywhere
 
+" Make vim recognize . as keyword in R files
+augroup rperiod
+  autocmd!
+  autocmd FileType r set iskeyword-=.
+augroup END
+
 "prevent vim from backing up crontabs
 set backupskip=/tmp/*,/private/tmp/*
 
@@ -241,6 +247,7 @@ augroup sqlcaps
   autocmd FileType sql,sqlanywhere iabbrev <buffer> group GROUP
   autocmd FileType sql,sqlanywhere iabbrev <buffer> with WITH
   autocmd FileType sql,sqlanywhere iabbrev <buffer> and AND
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> or OR
   autocmd FileType sql,sqlanywhere iabbrev <buffer> order ORDER
   autocmd FileType sql,sqlanywhere iabbrev <buffer> between BETWEEN
   autocmd FileType sql,sqlanywhere iabbrev <buffer> max MAX
@@ -258,6 +265,14 @@ augroup sqlcaps
   autocmd FileType sql,sqlanywhere iabbrev <buffer> else ELSE
   autocmd FileType sql,sqlanywhere iabbrev <buffer> by BY
   autocmd FileType sql,sqlanywhere iabbrev <buffer> sum SUM
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> drop DROP
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> table TABLE
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> begin BEGIN
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> commit COMMIT
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> having HAVING
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> to TO
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> over OVER
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> partition PARTITION
 augroup END
 
 "###################################
