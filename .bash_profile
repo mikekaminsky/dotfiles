@@ -10,6 +10,9 @@ alias be="bundle exec"
 alias r="r --no-save"
 alias R="r --no-save"
 
+export CLICOLOR=1
+export LS_COLORS=exfxcxdxbxegedabagacad
+
 cd() { builtin cd "$@"; ls; }
 
 export HISTCONTROL=erasedups  # Removes duplicate entires
