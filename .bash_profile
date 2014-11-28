@@ -29,3 +29,6 @@ export R_HISTFILE=~/.Rhistory
 
 [ -f ~/.bashrc_local ] && . ~/.bashrc_local
 [ -f ~/.bash_profile.local ] && . ~/.bash_profile.local
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
