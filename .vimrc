@@ -1,4 +1,5 @@
 " Michael's Vim Profile
+
 set nocp
 source ~/.vim/bundle/pathogen/autoload/pathogen.vim
 
@@ -41,6 +42,7 @@ autocmd FileType gitcommit,mail,mkd,text set spell
 " Set headers
 autocmd BufNewFile *.sql,*.r exec "normal i\\fn \<esc>omyname\<esc>"
 autocmd FileType sql set filetype=sqlanywhere
+au BufRead,BufNewFile *.lookml set filetype=lookml
 
 " Make vim recognize . as keyword in R files
 augroup rperiod
@@ -291,10 +293,22 @@ map <leader><leader> <plug>NERDCommenterToggle
 "Delimitmate
 let delimitMate_matchpairs = "(:),[:],{:}"
 
+
+"Based on Vim Markdown Preview
+"git@github.com:JamshedVesuna/vim-markdown-preview.git
+"Added markdown preview to vimrc. Requires 'brew install markdown' to work
+function! Vim_Markdown_Preview()
+  let curr_file = expand('%:t')
+  call system('markdown ' . curr_file . ' > /tmp/vim-markdown-preview.html')
+  call system('open /tmp/vim-markdown-preview.html')
+endfunction
+
+autocmd Filetype markdown,md map <buffer> <C-p> :call Vim_Markdown_Preview()<CR>
+
 "###################################
 "Source local .vimrc
 "###################################
-if filereadable($HOME . "/.vimrc_local")
+if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
 
