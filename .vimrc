@@ -13,6 +13,9 @@ filetype on
 syntax on
 filetype plugin indent on
 
+"Don't double-indent single line comments in c and c++
+au FileType c,cpp setlocal comments-=:// comments+=f://
+
 "###################################
 "System
 "###################################
@@ -187,8 +190,9 @@ nnoremap cu ct_
 nnoremap cU dT_s
 
 " Indent/unindent visual mode selection with tab/shift+tab
-vnoremap <tab> >gv
-vnoremap <s-tab> <gv
+" COMMENTED OUT DUE TO INCOMPATABILITY WITH SNIPMATE
+"vnoremap <tab> >gv
+"vnoremap <s-tab> <gv
 
 "Enable omni completion
 filetype plugin on
@@ -294,4 +298,4 @@ if filereadable($HOME . "/.vimrc_local")
   source ~/.vimrc.local
 endif
 
-
+let python_highlight_all = 1
