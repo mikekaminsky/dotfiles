@@ -60,6 +60,9 @@ set hidden
 "Prevent existing swap file warnings
 set shortmess+=A
 
+"Add splits below and to the right
+set splitbelow
+set splitright
 
 "###################################
 "Environment
