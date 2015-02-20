@@ -20,6 +20,10 @@ au FileType c,cpp setlocal comments-=:// comments+=f://
 "###################################
 "System
 "###################################
+
+" Have vim read changes from file as they happen
+set autoread
+
 "Save lots of history
 set history=1000
 
@@ -289,13 +293,13 @@ augroup END
 "###################################
 "Nerd tree
 noremap \ :NERDTreeToggle<CR>
+noremap \| :NERDTreeFind<CR>
 
 "Double tap space to comment
 map <leader><leader> <plug>NERDCommenterToggle
 
 "Delimitmate
 let delimitMate_matchpairs = "(:),[:],{:}"
-
 
 "Based on Vim Markdown Preview
 "git@github.com:JamshedVesuna/vim-markdown-preview.git
