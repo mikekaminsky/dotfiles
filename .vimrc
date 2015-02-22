@@ -40,6 +40,9 @@ cnoremap WQ wq
 cnoremap wQ wq
 cnoremap Q q
 
+"Write every time window loses focus
+au FocusLost * silent! wa
+
 "Set spell check for text files
 autocmd FileType gitcommit,mail,mkd,text set spell
 
