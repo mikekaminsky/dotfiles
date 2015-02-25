@@ -10,7 +10,10 @@
 	recurseSubmodules = on-demand
 [status]
 	submoduleSummary = true
+	showUntrackedFiles = all
 [pull]
   rebase = preserve
 [include]
   path = ~/.gitconfig.local
+[help]
+	format = html
