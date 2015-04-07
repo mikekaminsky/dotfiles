@@ -301,6 +301,8 @@ noremap \| :NERDTreeFind<CR>
 "Double tap space to comment
 map <leader><leader> <plug>NERDCommenterToggle
 
+let NERDTreeIgnore = ['\.pyc$']
+
 "Delimitmate
 let delimitMate_matchpairs = "(:),[:],{:}"
 
