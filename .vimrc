@@ -152,8 +152,8 @@ set statusline+=%L " Total lines
 "###################################
 " Copy indent from current line when starting a new line 
 set autoindent
-" wrap long lines
-set wrap
+" DON'T wrap long lines
+set nowrap
 " Break lines on words
 set linebreak
 " Make j,k,0,and $ behave the same way with wrapped lines
