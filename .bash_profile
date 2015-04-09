@@ -10,6 +10,7 @@ alias v="mvim"
 alias be="bundle exec"
 alias r="r --no-save"
 alias R="r --no-save"
+alias shutupvim='rm -v ~/tmp/*.sw* /var/tmp/*.sw*'
 
 export CLICOLOR=1
 export LS_COLORS=exfxcxdxbxegedabagacad
