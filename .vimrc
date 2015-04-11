@@ -101,6 +101,19 @@ endfunc
 
 nnoremap <C-h> :call NumberToggle()<cr>
 
+"<leader>+l toggles drop line at cursor
+function! VertToggle()
+  if(&colorcolumn)
+    set colorcolumn=
+  else
+    let thiscol = col('.')
+    echo thiscol
+    let &colorcolumn=thiscol
+  endif
+endfunc
+
+nnoremap <leader>l :call VertToggle()<cr>
+
 
 "Set colorscheme
 set background=dark
@@ -189,7 +202,6 @@ nnoremap <Leader>p "+p
 nnoremap <Leader>P "+P
 vnoremap <Leader>p "+p
 vnoremap <Leader>P "+P
-
 
 "Paste with space before
 "nnoremap <C-p> a <esc>p
