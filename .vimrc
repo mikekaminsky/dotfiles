@@ -322,17 +322,15 @@ let delimitMate_matchpairs = "(:),[:],{:}"
 "git@github.com:JamshedVesuna/vim-markdown-preview.git
 "Added markdown preview to vimrc. Requires 'brew install markdown' to work
 function! Vim_Markdown_Preview()
-  let curr_file = expand('%:t')
+  let curr_file = expand('%:p')
   call system('markdown ' . curr_file . ' > /tmp/vim-markdown-preview.html')
   call system('open /tmp/vim-markdown-preview.html')
 endfunction
 
 autocmd Filetype markdown,md map <buffer> <C-p> :call Vim_Markdown_Preview()<CR>
 
-
 " Create a function to copy path of file to clipboard for pasting into terminal.
 noremap <leader>k :let @* = expand("%:p")<CR>
-
 
 "###################################
 "Source local .vimrc
@@ -342,13 +340,3 @@ if filereadable($HOME . "/.vimrc.local")
 endif
 
 let python_highlight_all = 1
-
-
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
