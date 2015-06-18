@@ -122,6 +122,11 @@ colorscheme solarized
 set guifont=Menlo:h14
 " Highlight the last searched pattern:
 set hlsearch
+
+" Color search words
+hi Search guibg=WhiteSmoke   
+hi Search guifg=CornflowerBlue   
+
 " Show matching brackets and parentheses
 set showmatch 
 " Highlight search terms
