@@ -10,19 +10,47 @@ Rename any dotfiles you are currently using (e.g., .rprofile, .vimrc, .bash_prof
 Create symlinks
 
 ```
-  cd ~
-  ln -s workspace/dotfiles/vim .vim
-  ln -s workspace/dotfiles/.vimrc .vimrc
-  ln -s workspace/dotfiles/.bash_profile .bash_profile
-  ln -s workspace/dotfiles/.inputrc .inputrc
+cd ~
+ln -s workspace/dotfiles/vim .vim
+ln -s workspace/dotfiles/.vimrc .vimrc
+ln -s workspace/dotfiles/.bash_profile .bash_profile
+ln -s workspace/dotfiles/.inputrc .inputrc
 ```
 
 Install submodules
 
 ```
-  git submodule sync
-  git submodule update --init
+cd ~/workspace/dotfiles
+git submodule sync
+git submodule update --init
 ```
+
+Install other things (optional).
+```
+#Install brew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+#Install cask
+brew install caskroom/cask/brew-cask
+
+#Install CLI utilities
+brew install git
+brew install macvim
+brew install markdown
+brew install autoenv
+brew install postgresql
+brew install the_silver_searcher
+brew install tig
+
+#Install Other Applications
+brew cask install spectacle
+brew cask install alfred  
+brew cask install dash
+brew install python
+brew cask install evernote
+
+```
+
 
 To Do:
 ___________________
