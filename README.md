@@ -15,6 +15,7 @@ ln -s workspace/dotfiles/vim .vim
 ln -s workspace/dotfiles/.vimrc .vimrc
 ln -s workspace/dotfiles/.bash_profile .bash_profile
 ln -s workspace/dotfiles/.inputrc .inputrc
+ln -s workspace/dotfiles/.rprofile .rprofile
 ```
 
 Install submodules
@@ -41,12 +42,15 @@ brew install autoenv
 brew install postgresql
 brew install the_silver_searcher
 brew install tig
+brew install python
+brew tap homebrew/science
+brew install r
 
 #Install Other Applications
 brew cask install spectacle
 brew cask install alfred  
 brew cask install dash
-brew install python
+
 brew cask install evernote
 
 ```
