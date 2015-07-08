@@ -42,3 +42,5 @@ source /usr/local/opt/autoenv/activate.sh
 function cpwd {
   pwd | tr -d '\n' | pbcopy
 }
+
+export PYTHONSTARTUP=$HOME/.pystartup

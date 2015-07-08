@@ -15,6 +15,7 @@ Create symlinks
   ln -s workspace/dotfiles/.vimrc .vimrc
   ln -s workspace/dotfiles/.bash_profile .bash_profile
   ln -s workspace/dotfiles/.inputrc .inputrc
+  ln -s workspace/dotfiles/.pystartup .pystartup
 ```
 
 Install submodules
