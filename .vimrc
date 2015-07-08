@@ -188,6 +188,10 @@ set shiftwidth=2
 set expandtab
 set smarttab
 
+" Except not for python
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
+
+
 " Map 'jk' to escape
 inoremap jk <esc>
 
