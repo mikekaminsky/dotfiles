@@ -43,4 +43,8 @@ function cpwd {
   pwd | tr -d '\n' | pbcopy
 }
 
+function pshead {
+  ps aux | head -1; ps aux | grep "\b$1\b"
+}
+
 export PYTHONSTARTUP=$HOME/.pystartup
