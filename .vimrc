@@ -50,6 +50,7 @@ autocmd FileType gitcommit,mail,mkd,text set spell
 autocmd BufNewFile *.sql,*.r exec "normal i\\fn \<esc>omyname\<esc>"
 autocmd FileType sql set filetype=sqlanywhere
 au BufRead,BufNewFile *.lookml set filetype=lookml
+autocmd FileType lookml set syntax=yaml
 
 " Make vim recognize . as keyword in R files
 augroup rperiod
@@ -191,6 +192,7 @@ set smarttab
 " Except not for python
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 
+autocmd Filetype markdown setlocal wrap
 
 " Map 'jk' to escape
 inoremap jk <esc>
