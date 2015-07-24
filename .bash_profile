@@ -47,4 +47,6 @@ function pshead {
   ps aux | head -1; ps aux | grep "\b$1\b"
 }
 
+git config --global pull.rebase true
+
 export PYTHONSTARTUP=$HOME/.pystartup
