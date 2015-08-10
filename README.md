@@ -10,12 +10,13 @@ Rename any dotfiles you are currently using (e.g., .rprofile, .vimrc, .bash_prof
 Create symlinks
 
 ```
-  cd ~
-  ln -s workspace/dotfiles/vim .vim
-  ln -s workspace/dotfiles/.vimrc .vimrc
-  ln -s workspace/dotfiles/.bash_profile .bash_profile
-  ln -s workspace/dotfiles/.inputrc .inputrc
-  ln -s workspace/dotfiles/.pystartup .pystartup
+cd ~
+ln -s workspace/dotfiles/vim .vim
+ln -s workspace/dotfiles/.vimrc .vimrc
+ln -s workspace/dotfiles/.bash_profile .bash_profile
+ln -s workspace/dotfiles/.inputrc .inputrc
+ln -s workspace/dotfiles/.pystartup .pystartup
+ln -s workspace/dotfiles/.psqlrc .psqlrc
 ln -s workspace/dotfiles/.rprofile .rprofile
 ```
 
@@ -46,6 +47,9 @@ brew install tig
 brew install python
 brew tap homebrew/science
 brew install r
+brew install watch
+brew install pandoc
+brew install htop
 
 #Install Other Applications
 brew cask install spectacle
@@ -54,7 +58,7 @@ brew cask install dash
 brew cask install evernote
 brew cask install slack
 brew cask install caffeine
-
+brew cask install mactex
 ```
 
 
