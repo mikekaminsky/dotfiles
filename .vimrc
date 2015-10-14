@@ -47,7 +47,6 @@ au FocusLost * silent! wa
 autocmd FileType gitcommit,mail,mkd,text set spell
 
 " Set headers
-autocmd BufNewFile *.sql,*.r exec "normal i\\fn \<esc>omyname\<esc>"
 autocmd FileType sql set filetype=sqlanywhere
 au BufRead,BufNewFile *.lookml set filetype=lookml
 autocmd FileType lookml set syntax=yaml
@@ -61,7 +60,7 @@ augroup END
 "prevent vim from backing up crontabs
 set backupskip=/tmp/*,/private/tmp/*
 
-"When you move away from a buffer it will go into the background 
+"When you move away from a buffer it will go into the background
 "it doesn't close the buffer when you close the window --needed for :Cdo
 set hidden
 
@@ -78,12 +77,12 @@ set splitright
 
 "Show the mode
 set showmode
-"Highlight the cursor line 
+"Highlight the cursor line
 set cursorline
 "Show column and line number at bottom right
 set ruler
 "Relative line numbers
-set rnu 
+set rnu
 
 " Get the nice tab through menu
 set wildmenu
@@ -125,15 +124,18 @@ set guifont=Menlo:h14
 set hlsearch
 
 " Color search words
-hi Search guibg=WhiteSmoke   
-hi Search guifg=CornflowerBlue   
+hi Search guibg=WhiteSmoke
+hi Search guifg=CornflowerBlue
 
 " Show matching brackets and parentheses
-set showmatch 
+set showmatch
 " Highlight search terms
 set hlsearch
+
 " Ignore case in search
 set ignorecase
+
+
 " find as you type search
 set incsearch
 "clearing highlighted search using "<space> /"
@@ -148,6 +150,7 @@ nnoremap <Leader>wn :match ExtraWhitespace /\s\+\%#\@<!$/<CR>
 nnoremap <Leader>wf :match<CR>
 autocmd BufWinEnter * call clearmatches()
 
+nnoremap <leader>rw :%s/\s\+$//
 "Panic Button
 "Space f takes you to the last place you edited
 nnoremap <Leader>f `.
@@ -169,7 +172,7 @@ set statusline+=%L " Total lines
 "###################################
 "Editing
 "###################################
-" Copy indent from current line when starting a new line 
+" Copy indent from current line when starting a new line
 set autoindent
 " DON'T wrap long lines
 set nowrap
