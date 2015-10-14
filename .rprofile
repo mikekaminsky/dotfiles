@@ -1,5 +1,8 @@
 options(prompt="R> ", digits=4, show.signif.stars=FALSE, warnPartialMatchDollar = TRUE)
 options("width"=160)
+
+library(colorout)
+
 if (file.exists("~/.rprofile.local")){
     source("~/.rprofile.local")
 }
