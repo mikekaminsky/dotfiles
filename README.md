@@ -59,6 +59,9 @@ brew cask install evernote
 brew cask install slack
 brew cask install caffeine
 brew cask install mactex
+
+brew tap tldr-pages/tldr
+brew install tldr
 ```
 
 
