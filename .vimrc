@@ -149,8 +149,24 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=DarkCyan
 nnoremap <Leader>wn :match ExtraWhitespace /\s\+\%#\@<!$/<CR>
 nnoremap <Leader>wf :match<CR>
 autocmd BufWinEnter * call clearmatches()
-
 nnoremap <leader>rw :%s/\s\+$//
+
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
+autocmd BufWritePre *.py,*.js :call <SID>StripTrailingWhitespaces()
+
+
+
 "Panic Button
 "Space f takes you to the last place you edited
 nnoremap <Leader>f `.
