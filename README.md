@@ -50,6 +50,10 @@ brew install r
 brew install watch
 brew install pandoc
 brew install htop
+brew install tree
+brew install wget
+brew tap tldr-pages/tldr
+brew install tldr
 
 #Install Other Applications
 brew cask install spectacle
@@ -60,8 +64,6 @@ brew cask install slack
 brew cask install caffeine
 brew cask install mactex
 
-brew tap tldr-pages/tldr
-brew install tldr
 ```
 
 
