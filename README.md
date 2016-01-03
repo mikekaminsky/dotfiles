@@ -63,7 +63,7 @@ brew cask install evernote
 brew cask install slack
 brew cask install caffeine
 brew cask install mactex
-
+brew cask install karabiner
 ```
 
 
