@@ -39,6 +39,7 @@ cnoremap W w
 cnoremap WQ wq
 cnoremap wQ wq
 cnoremap Q q
+nnoremap Q <nop>
 
 "Write every time window loses focus
 au FocusLost * silent! wa
