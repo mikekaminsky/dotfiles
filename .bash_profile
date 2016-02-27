@@ -20,7 +20,8 @@ cd() { builtin cd "$@"; ls; }
 export HISTCONTROL=erasedups  # Removes duplicate entires
 export HISTSIZE=10000  # Increase command history
 shopt -s histappend  # Ensures all history is saved
-PROMPT_COMMAND='history -a' #Record history at every command
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND} history -n" #Record history at every command
+
 
 set completion-ignore-case on
 
