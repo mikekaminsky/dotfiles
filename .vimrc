@@ -340,6 +340,7 @@ augroup END
 "Nerd tree
 noremap \ :NERDTreeToggle<CR>
 noremap \| :NERDTreeFind<CR>
+let NERDTreeIgnore = ['\.pyc$','\.swp$']
 
 "Double tap space to comment
 map <leader><leader> <plug>NERDCommenterToggle
