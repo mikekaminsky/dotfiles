@@ -21,6 +21,9 @@ au FileType c,cpp setlocal comments-=:// comments+=f://
 "System
 "###################################
 
+" Switch to visual bells from stupid beeps
+set vb 
+
 " Have vim read changes from file as they happen
 set autoread
 
