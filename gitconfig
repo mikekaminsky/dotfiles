@@ -1,0 +1,23 @@
+[color]
+	ui = auto
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain
+[diff]
+	submodule = log
+[fetch]
+	recurseSubmodules = on-demand
+[status]
+	submoduleSummary = true
+	showUntrackedFiles = all
+[pull]
+	rebase = true
+[include]
+  path = ~/.gitconfig.local
+[help]
+	format = html
+[alias]
+# A better git stash
+wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m 'wip'"
+unwip = !git log -n 1 | grep -q -c wip && git reset HEAD~1

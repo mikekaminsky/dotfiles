@@ -18,6 +18,7 @@ ln -s workspace/dotfiles/.inputrc .inputrc
 ln -s workspace/dotfiles/.pystartup .pystartup
 ln -s workspace/dotfiles/.psqlrc .psqlrc
 ln -s workspace/dotfiles/.rprofile .rprofile
+ln -s workspace/dotfiles/gitconfig .gitconfig
 ```
 
 Install submodules
