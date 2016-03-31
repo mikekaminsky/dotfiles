@@ -11,6 +11,7 @@ alias be="bundle exec"
 alias r="r --no-save"
 alias R="r --no-save"
 alias shutupvim='rm -v ~/tmp/*.sw* /var/tmp/*.sw*'
+alias weather="curl -4 http://wttr.in/New_York"
 
 export CLICOLOR=1
 export LS_COLORS=exfxcxdxbxegedabagacad
