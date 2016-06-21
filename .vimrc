@@ -120,7 +120,12 @@ nnoremap <leader>l :call VertToggle()<cr>
 
 
 "Set colorscheme
+set t_Co=256
 set background=dark
+if !has('gui_running')
+  let g:solarized_termcolors=&t_Co
+  let g:solarized_termtrans=1
+endif
 colorscheme solarized
 " Set font and size
 set guifont=Menlo:h14
