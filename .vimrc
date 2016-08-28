@@ -172,7 +172,7 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
-autocmd BufWritePre *.py,*.js :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.py,*.js,*.sql :call <SID>StripTrailingWhitespaces()
 
 
 
