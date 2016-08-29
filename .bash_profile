@@ -20,10 +20,11 @@ export LS_COLORS=exfxcxdxbxegedabagacad
 cd() { builtin cd "$@"; ls; }
 
 export HISTCONTROL=erasedups  # Removes duplicate entires
-export HISTSIZE=10000  # Increase command history
+export HISTSIZE=50000  # Increase command history
 shopt -s histappend  # Ensures all history is saved
-PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND} history -n" #Record history at every command
-
+#PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND} history -n" #Record history at every command
+#bind '"\e[A": history-search-backward'
+#bind '"\e[B": history-search-forward'
 
 set completion-ignore-case on
 
@@ -34,9 +35,6 @@ export -f parse_git_branch
 export PS1="\W \[\033[33m\]\$(parse_git_branch)∆†∆\[\033[00m\]\[\033[00m\] "
 
 export R_HISTFILE=~/.Rhistory
-
-[ -f ~/.bashrc_local ] && . ~/.bashrc_local
-[ -f ~/.bash_profile.local ] && . ~/.bash_profile.local
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -57,3 +55,7 @@ export PYTHONSTARTUP=$HOME/.pystartup
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 eval "$(rbenv init -)"
+
+[ -f ~/.bashrc_local ] && . ~/.bashrc_local
+[ -f ~/.bash_profile.local ] && . ~/.bash_profile.local
+
