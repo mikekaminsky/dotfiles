@@ -92,13 +92,12 @@ set rnu
 set wildmenu
 
 
+set number
 "ctrl+h toggles relative line numbers on and off
 function! NumberToggle()
   if(&relativenumber == 1)
     set norelativenumber
-    set number
   else
-    set nonumber
     set relativenumber
   endif
 endfunc
