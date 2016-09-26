@@ -56,6 +56,7 @@ brew install wget
 brew tap tldr-pages/tldr
 brew install tldr
 brew install ack
+brew install trash
 
 #Install Other Applications
 brew cask install spectacle
