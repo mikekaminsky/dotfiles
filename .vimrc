@@ -205,7 +205,7 @@ set linebreak
 " Make j,k,0,and $ behave the same way with wrapped lines
 noremap  <buffer> <silent> k gk
 noremap  <buffer> <silent> j gj
-noremap  <buffer> <silent> 0 g0
+"noremap  <buffer> <silent> 0 g0
 noremap  <buffer> <silent> $ g$
 
 " In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
