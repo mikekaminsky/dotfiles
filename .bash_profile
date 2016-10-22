@@ -60,3 +60,6 @@ eval "$(rbenv init -)"
 [ -f ~/.bashrc_local ] && . ~/.bashrc_local
 [ -f ~/.bash_profile.local ] && . ~/.bash_profile.local
 
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh

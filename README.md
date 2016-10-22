@@ -56,7 +56,8 @@ brew install wget
 brew tap tldr-pages/tldr
 brew install tldr
 brew install ack
-brew install trash
+brew install python3
+pip3 install virtualenvwrapper
 
 #Install Other Applications
 brew cask install spectacle
@@ -66,7 +67,7 @@ brew cask install evernote
 brew cask install slack
 brew cask install caffeine
 brew cask install mactex
-brew cask install karabiner
+
 ```
 
 
