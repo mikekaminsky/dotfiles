@@ -13,7 +13,6 @@ alias R="r --no-save"
 alias shutupvim='rm -v ~/tmp/*.sw* /var/tmp/*.sw*'
 alias weather="curl -4 http://wttr.in/New_York"
 alias moon="curl -4 http://wttr.in/Moon"
-alias rm="trash"
 
 export CLICOLOR=1
 export LS_COLORS=exfxcxdxbxegedabagacad
