@@ -10,15 +10,15 @@ Rename any dotfiles you are currently using (e.g., .rprofile, .vimrc, .bash_prof
 Create symlinks
 
 ```
-cd ~
-ln -s workspace/dotfiles/vim .vim
-ln -s workspace/dotfiles/.vimrc .vimrc
-ln -s workspace/dotfiles/.bash_profile .bash_profile
-ln -s workspace/dotfiles/.inputrc .inputrc
-ln -s workspace/dotfiles/.pystartup .pystartup
-ln -s workspace/dotfiles/.psqlrc .psqlrc
-ln -s workspace/dotfiles/.rprofile .rprofile
-ln -s workspace/dotfiles/gitconfig .gitconfig
+ln -s workspace/dotfiles/vim ~/.vim
+ln -s workspace/dotfiles/.vimrc ~/.vimrc
+ln -s workspace/dotfiles/.bash_profile ~/.bash_profile
+ln -s workspace/dotfiles/.inputrc ~/.inputrc
+ln -s workspace/dotfiles/.pystartup ~/.pystartup
+ln -s workspace/dotfiles/.psqlrc ~/.psqlrc
+ln -s workspace/dotfiles/.rprofile ~/.rprofile
+ln -s workspace/dotfiles/gitconfig ~/.gitconfig
+ln -s workspace/dotfiles/tmux.conf ~/.tmux.conf
 ```
 
 Install submodules
@@ -57,6 +57,7 @@ brew tap tldr-pages/tldr
 brew install tldr
 brew install ack
 brew install python3
+brew install tmux
 pip3 install virtualenvwrapper
 
 #Install Other Applications
@@ -64,7 +65,6 @@ brew cask install spectacle
 brew cask install alfred  
 brew cask install dash
 brew cask install evernote
-brew cask install slack
 brew cask install caffeine
 brew cask install mactex
 
