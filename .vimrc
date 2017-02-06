@@ -14,8 +14,9 @@ filetype on
 syntax on
 filetype plugin indent on
 
-"Don't double-indent single line comments in c and c++
-au FileType c,cpp setlocal comments-=:// comments+=f://
+" Try to make vim go faster in TMUX
+set lazyredraw
+set ttyfast
 
 "###################################
 "System
@@ -173,6 +174,9 @@ endfunction
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 autocmd BufWritePre *.py,*.js,*.sql :call <SID>StripTrailingWhitespaces()
 
+
+"Don't double-indent single line comments in c and c++
+au FileType c,cpp setlocal comments-=:// comments+=f://
 
 
 "Panic Button
