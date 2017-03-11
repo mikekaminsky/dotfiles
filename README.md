@@ -58,6 +58,7 @@ brew install tldr
 brew install ack
 brew install python3
 brew install tmux
+brew install bash-completion
 pip3 install virtualenvwrapper
 
 #Install Other Applications
