@@ -1,3 +1,6 @@
+# Vim mode on the command line
+set editing-mode vi
+
 #Up/Down arrow cycle through history based on what's already typed
 "\e[A":history-search-backward 
 "\e[B":history-search-forward
