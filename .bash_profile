@@ -20,9 +20,15 @@ export LS_COLORS=exfxcxdxbxegedabagacad
 
 # Basic terminal interactions
 export HISTCONTROL=erasedups  # Removes duplicate entires
-export HISTSIZE=50000  # Increase command history
+export HISTSIZE=100000  # Increase command history
+export HISTFILESIZE=1000000000
 shopt -s histappend  # Ensures all history is saved
-PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND} history -n" #Record history at every command
+# After each command, save and reload history
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+#PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND} history -n" #Record history at every command
+
+alias hgrep='history|grep --color' # Search history
+
 
 set completion-ignore-case on
 
