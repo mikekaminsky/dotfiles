@@ -120,12 +120,14 @@ nnoremap <leader>l :call VertToggle()<cr>
 
 
 "Set colorscheme
+"Recommended: import solarized as your default colorscheme for terminal (see
+"more at https://github.com/altercation/solarized/tree/master/osx-terminal.app-colors-solarized
 set t_Co=256
-set background=dark
 if !has('gui_running')
   let g:solarized_termcolors=&t_Co
-  let g:solarized_termtrans=1
+  "let g:solarized_termtrans=1 " Use the default terminal background color
 endif
+set background=light
 colorscheme solarized
 " Set font and size
 set guifont=Menlo:h14
