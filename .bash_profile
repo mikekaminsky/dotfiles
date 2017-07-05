@@ -13,6 +13,7 @@ alias r="r --no-save"
 alias R="r --no-save"
 alias weather="curl -4 http://wttr.in/New_York"
 alias moon="curl -4 http://wttr.in/Moon"
+alias password="python -c 'import uuid; print(uuid.uuid4().hex.title())'"
 
 # Better Collors
 export CLICOLOR=1

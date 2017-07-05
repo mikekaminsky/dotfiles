@@ -64,3 +64,6 @@
 [submodule "vim/bundle/vim-flake8"]
 	path = vim/bundle/vim-flake8
 	url = https://github.com/nvie/vim-flake8.git
+[submodule "vim/colors/PapayaWhip"]
+	path = vim/colors/PapayaWhip
+	url = https://github.com/vim-scripts/PapayaWhip.git
