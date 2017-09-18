@@ -127,7 +127,7 @@ if !has('gui_running')
   let g:solarized_termcolors=&t_Co
   "let g:solarized_termtrans=1 " Use the default terminal background color
 endif
-set background=light
+set background=dark
 colorscheme solarized
 " Set font and size
 set guifont=Menlo:h14
@@ -212,7 +212,7 @@ set linebreak
 noremap  <buffer> <silent> k gk
 noremap  <buffer> <silent> j gj
 "noremap  <buffer> <silent> 0 g0
-noremap  <buffer> <silent> $ g$
+"noremap  <buffer> <silent> $ g$
 
 " In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
 " & Set indent to 2 spaces
