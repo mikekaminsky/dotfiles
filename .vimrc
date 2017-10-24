@@ -397,6 +397,19 @@ autocmd Filetype markdown,md map <buffer> <C-p> :call Vim_Markdown_Preview()<CR>
 noremap <leader>k :let @* = expand("%:p")<CR>
 
 "###################################
+" Ack.vim
+"###################################
+"
+" Let Ack use Ag
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" Don't jump to the first result by default (use Ack! for that behavior)
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
+
+"###################################
 "Source local .vimrc
 "###################################
 if filereadable($HOME . "/.vimrc.local")
