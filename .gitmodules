@@ -67,3 +67,9 @@
 [submodule "vim/colors/PapayaWhip"]
 	path = vim/colors/PapayaWhip
 	url = https://github.com/vim-scripts/PapayaWhip.git
+[submodule "vim/bundle/fzf.vim"]
+	path = vim/bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "vim/bundle/fzf"]
+	path = vim/bundle/fzf
+	url = https://github.com/junegunn/fzf.git
