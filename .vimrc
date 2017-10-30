@@ -146,9 +146,9 @@ set hlsearch
 " Ignore case in search
 set ignorecase
 
-
 " find as you type search
 set incsearch
+
 "clearing highlighted search using "<space> /"
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 "Make search always go the same direction
@@ -315,6 +315,7 @@ iabbrev adn and
 iabbrev waht what
 iabbrev tehn then
 iabbrev wiht with
+iabbrev reponse response
 
 " My names
 iabbrev @@  kaminsky.michael@gmail.com
