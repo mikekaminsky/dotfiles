@@ -411,6 +411,18 @@ cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 
 "###################################
+" Fzf
+"###################################
+
+" TODO:
+" Make hitting these again close the quickfix window
+" Semicolon to fuzzy search buffers
+nmap ; :Buffers<CR>
+" Fuzzy Search files
+nmap <Leader>t :Files<CR>
+
+
+"###################################
 "Source local .vimrc
 "###################################
 if filereadable($HOME . "/.vimrc.local")
