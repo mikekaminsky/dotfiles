@@ -76,3 +76,6 @@
 [submodule "vim/bundle/ale.git"]
 	path = vim/bundle/ale.git
 	url = https://github.com/w0rp/ale.git
+[submodule "vim/bundle/goyo.vim"]
+	path = vim/bundle/goyo.vim
+	url = https://github.com/junegunn/goyo.vim

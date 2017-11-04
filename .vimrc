@@ -400,7 +400,7 @@ noremap <leader>k :let @* = expand("%:p")<CR>
 "###################################
 " Ack.vim
 "###################################
-"
+ 
 " Let Ack use Ag
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -421,6 +421,24 @@ nmap ; :Buffers<CR>
 " Fuzzy Search files
 nmap <Leader>t :Files<CR>
 
+" Goyo
+"###################################
+
+" TODO: Have this undo-itself when called a second time
+" TODO: Figure out how to get this to set wrapping as well
+function! ProseMode()
+  call goyo#execute(0, [])
+  set spell noci nosi noai nolist noshowmode noshowcmd
+  set complete+=s
+  set bg=light
+  if !has('gui_running')
+    let g:solarized_termcolors=256
+  endif
+  colors solarized
+endfunction
+
+command! ProseMode call ProseMode()
+nmap <Leader>w :ProseMode<CR> "w for 'write'
 
 "###################################
 "Source local .vimrc
