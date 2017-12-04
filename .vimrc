@@ -438,7 +438,7 @@ function! ProseMode()
 endfunction
 
 command! ProseMode call ProseMode()
-nmap <Leader>w :ProseMode<CR> "w for 'write'
+nmap <Leader>w :ProseMode<CR> 
 
 "###################################
 "Source local .vimrc
