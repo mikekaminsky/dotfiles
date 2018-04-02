@@ -1,6 +1,8 @@
 options(prompt="R> ", digits=4, show.signif.stars=FALSE, warnPartialMatchDollar = TRUE)
 options("width"=160)
 
+# library(devtools)
+# install_github("jalvesaq/colorout")
 library(colorout)
 
 if (file.exists("~/.rprofile.local")){
