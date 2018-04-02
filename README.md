@@ -34,43 +34,26 @@ Install other things (optional).
 #Install brew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-#Install cask
-brew install caskroom/cask/brew-cask
-
 #Install CLI utilities
 brew install git
-brew install macvim
-brew install markdown
 brew install autoenv
 brew install postgresql
-brew install the_silver_searcher
 brew install tig
-brew install python
-brew tap homebrew/science
-brew install r
-brew install watch
-brew install pandoc
-brew install htop
-brew install tree
-brew install wget
-brew tap tldr-pages/tldr
-brew install tldr
-brew install ack
 brew install python3
+brew install r
+brew install ack
 brew install tmux
 brew install bash-completion
 brew install reattach-to-user-namespace
+
+# Get ready to python 
 pip3 install virtualenvwrapper
 
-#Install Other Applications
-brew cask install spectacle
-brew cask install alfred  
-brew cask install dash
-brew cask install evernote
-brew cask install caffeine
-brew cask install mactex
-
+# R stuff
+git clone https://github.com/jalvesaq/colorout.git
+R CMD INSTALL colorout
 ```
+
 
 
 To Do:
