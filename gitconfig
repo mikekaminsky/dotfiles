@@ -22,5 +22,5 @@
 wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m 'wip'"
 unwip = !git log -n 1 | grep -q -c wip && git reset HEAD~1
 [user]
-	name = Michael Kaminsky
+	name = mikekaminsky
 	email = kaminsky.michael@gmail.com
