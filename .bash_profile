@@ -15,7 +15,7 @@ alias weather="curl -4 http://wttr.in/New_York"
 alias moon="curl -4 http://wttr.in/Moon"
 alias password="python -c 'import uuid; print(uuid.uuid4().hex.title())'"
 
-# Better Collors
+# Better Colors
 export CLICOLOR=1
 export LS_COLORS=exfxcxdxbxegedabagacad
 
@@ -72,6 +72,8 @@ eval "$(rbenv init -)"
 export R_HISTFILE=~/.Rhistory
 
 # Set up virtual environments
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
