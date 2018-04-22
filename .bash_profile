@@ -44,9 +44,6 @@ function pshead {
   ps aux | head -1; ps aux | grep "\b$1\b"
 }
 
-# Git configurations
-git config --global pull.rebase true
-
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi

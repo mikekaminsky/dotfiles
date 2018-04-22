@@ -19,6 +19,8 @@ ln -s workspace/dotfiles/.psqlrc ~/.psqlrc
 ln -s workspace/dotfiles/.rprofile ~/.rprofile
 ln -s workspace/dotfiles/gitconfig ~/.gitconfig
 ln -s workspace/dotfiles/tmux.conf ~/.tmux.conf
+ln -s workspace/dotfiles/.bash_sessions_disable ~/.bash_sessions_disable
+ln -s ~/workspace/dotfiles/dev-tmux.sh /usr/local/bin/dev-tmux.sh
 ```
 
 Install submodules
