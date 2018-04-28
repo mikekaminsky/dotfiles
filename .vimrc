@@ -224,7 +224,9 @@ set smarttab
 
 " Except not for python
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
-autocmd BufWritePost *.py call Flake8()
+nnoremap <Leader>c call Flake8()
+
+
 
 autocmd Filetype markdown setlocal wrap
 
