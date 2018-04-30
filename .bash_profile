@@ -40,6 +40,7 @@ function cpwd {
   pwd | tr -d '\n' | pbcopy
 }
 
+
 function pshead {
   ps aux | head -1; ps aux | grep "\b$1\b"
 }
@@ -74,6 +75,10 @@ export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
+
+# Postgres App (psql and postgreSQL server)
+#sudo mkdir -p /etc/paths.d &&
+#echo /Applications/Postgres.app/Contents/Versions/9.6/bin | sudo tee /etc/paths.d/postgresapp
 
 # Source local configurations
 [ -f ~/.bashrc_local ] && . ~/.bashrc_local
