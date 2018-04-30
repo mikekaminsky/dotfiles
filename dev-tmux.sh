@@ -1,6 +1,7 @@
 #!/bin/sh
-tmux new-session -d 'vim'
+tmux new-session -d 
 tmux split-window -h 
-tmux split-window -v -p 25
+tmux split-window -v -p 26
+tmux select-pane -L
+tmux send-keys 'vim' Enter
 tmux -2 attach-session -d 
-tmux selectp -t 0
