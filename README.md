@@ -21,6 +21,7 @@ ln -s workspace/dotfiles/gitconfig ~/.gitconfig
 ln -s workspace/dotfiles/tmux.conf ~/.tmux.conf
 ln -s workspace/dotfiles/.bash_sessions_disable ~/.bash_sessions_disable
 ln -s ~/workspace/dotfiles/dev-tmux.sh /usr/local/bin/dev-tmux.sh
+ln -s ~/workspace/dotfiles/.config/flake8 ~/.config/flake8
 ```
 
 Install submodules
