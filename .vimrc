@@ -409,8 +409,7 @@ if executable('ag')
 endif
 
 " Don't jump to the first result by default (use Ack! for that behavior)
-cnoreabbrev Ack Ack!
-nnoremap <Leader>a :Ack!<Space>
+nnoremap <Leader>a :Ag --ignore log<Space>
 
 "###################################
 " Fzf

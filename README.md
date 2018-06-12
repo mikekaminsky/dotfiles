@@ -48,6 +48,7 @@ brew install ack
 brew install tmux
 brew install bash-completion
 brew install reattach-to-user-namespace
+brew install the_silver_searcher
 
 # Get ready to python 
 pip3 install virtualenvwrapper
