@@ -400,18 +400,6 @@ autocmd Filetype markdown,md map <buffer> <C-p> :call Vim_Markdown_Preview()<CR>
 noremap <leader>k :let @* = expand("%:p")<CR>
 
 "###################################
-" Ack.vim
-"###################################
- 
-" Let Ack use Ag
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
-" Don't jump to the first result by default (use Ack! for that behavior)
-nnoremap <Leader>a :Ag --ignore log<Space>
-
-"###################################
 " Fzf
 "###################################
 
@@ -422,6 +410,20 @@ nmap ; :Buffers<CR>
 " Fuzzy Search files
 nmap <Leader>t :Files<CR>
 
+"###################################
+" The Silver Searcher
+"###################################
+ 
+" Let Ack use Ag
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+nnoremap <Leader>a :Ag <Space>
+
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--path-to-ignore .gitignore --ignore-dir .git/ --hidden', <bang>0)
+
+"###################################
 " Goyo
 "###################################
 
