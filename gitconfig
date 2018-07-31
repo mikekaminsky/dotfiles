@@ -6,6 +6,8 @@
 	helper = osxkeychain
 [diff]
 	submodule = log
+[rebase]
+  autostash = true
 [fetch]
 	recurseSubmodules = on-demand
 [status]
