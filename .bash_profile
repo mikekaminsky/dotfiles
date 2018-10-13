@@ -77,8 +77,8 @@ export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
 
 # Postgres App (psql and postgreSQL server)
-#sudo mkdir -p /etc/paths.d &&
-#echo /Applications/Postgres.app/Contents/Versions/9.6/bin | sudo tee /etc/paths.d/postgresapp
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin 
+
 
 # Source local configurations
 [ -f ~/.bashrc_local ] && . ~/.bashrc_local
