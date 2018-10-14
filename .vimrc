@@ -1,14 +1,34 @@
 " Michael's Vim Profile
 
 set nocp
-source ~/.vim/bundle/pathogen/autoload/pathogen.vim
 
-" Run pathogen
-call pathogen#infect()
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-"Testing turning syntox and filetype on and off
-"to make plugins play nice with pathogen
-"http://stackoverflow.com/questions/3383502/pathogen-does-not-load-plugins
+call plug#begin('~/.vim/plugged')
+
+
+Plug 'altercation/vim-colors-solarized'
+
+Plug 'ambv/black',
+
+Plug 'junegunn/fzf'
+
+Plug 'junegunn/fzf.vim'
+
+Plug 'scrooloose/nerdtree'
+
+Plug 'vim-scripts/camelcasemotion'
+
+Plug 'scrooloose/nerdcommenter'
+
+
+call plug#end()
+
+
 "filetype off
 filetype on
 syntax on
