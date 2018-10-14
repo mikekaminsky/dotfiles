@@ -10,20 +10,21 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-
+" Appearance
 Plug 'altercation/vim-colors-solarized'
 
-Plug 'ambv/black',
-
+" File navivation
 Plug 'junegunn/fzf'
-
 Plug 'junegunn/fzf.vim'
-
 Plug 'scrooloose/nerdtree'
 
+" Vim commands and controls
 Plug 'vim-scripts/camelcasemotion'
-
 Plug 'scrooloose/nerdcommenter'
+
+" Python
+Plug 'ambv/black'
+Plug 'nvie/vim-flake8'
 
 
 call plug#end()
@@ -244,7 +245,7 @@ set smarttab
 
 " Except not for python
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
-nnoremap <Leader>c call Flake8()
+
 
 
 
@@ -327,6 +328,8 @@ noremap <Leader>j i<CR><Esc>
 inoremap \fn <C-R>=expand("%:t")<CR>
 inoremap \fp <C-R>=expand("%:p:h")<CR>
 
+" Copy path of file to clipboard for pasting into terminal.
+noremap <leader>k :let @* = expand("%:p")<CR>
 
 "###################################
 "Abbreviations
@@ -382,42 +385,42 @@ augroup sqlcaps
   autocmd FileType sql,sqlanywhere iabbrev <buffer> drop DROP
   autocmd FileType sql,sqlanywhere iabbrev <buffer> table TABLE
   autocmd FileType sql,sqlanywhere iabbrev <buffer> begin BEGIN
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> commit COMMIT
+  autocmd FileType sql,sqlanywhere iabbrev <buffer> commit COMMIT 
   autocmd FileType sql,sqlanywhere iabbrev <buffer> having HAVING
   autocmd FileType sql,sqlanywhere iabbrev <buffer> to TO
   autocmd FileType sql,sqlanywhere iabbrev <buffer> over OVER
   autocmd FileType sql,sqlanywhere iabbrev <buffer> partition PARTITION
 augroup END
 
+"####################################################################
+"Plugin Configuration
+"####################################################################
+
 "###################################
-"Plugins
+" NerdTree
 "###################################
-"Nerd tree
 noremap \ :NERDTreeToggle<CR>
 noremap \| :NERDTreeFind<CR>
 let NERDTreeIgnore = ['\.pyc$','\.swp$']
 
+"###################################
+" NerdCommender
+"###################################
 "Double tap space to comment
 map <leader><leader> <plug>NERDCommenterToggle
 
 let NERDTreeIgnore = ['\.pyc$']
 
-"Delimitmate
+"###################################
+" delimitMate
+"###################################
 let delimitMate_matchpairs = "(:),[:],{:}"
 
-"Based on Vim Markdown Preview
-"git@github.com:JamshedVesuna/vim-markdown-preview.git
-"Added markdown preview to vimrc. Requires 'brew install markdown' to work
-function! Vim_Markdown_Preview()
-  let curr_file = expand('%:p')
-  call system('markdown ' . curr_file . ' > /tmp/vim-markdown-preview.html')
-  call system('open /tmp/vim-markdown-preview.html')
-endfunction
-
-autocmd Filetype markdown,md map <buffer> <C-p> :call Vim_Markdown_Preview()<CR>
-
-" Create a function to copy path of file to clipboard for pasting into terminal.
-noremap <leader>k :let @* = expand("%:p")<CR>
+"###################################
+" flake8
+"###################################
+command! Flake8 call Flake8()
+nnoremap <Leader>c :Flake8<CR>
 
 "###################################
 " Fzf
