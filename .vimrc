@@ -113,8 +113,9 @@ set rnu
 " Get the nice tab through menu
 set wildmenu
 
-
+" Display line numbers
 set number
+
 "ctrl+h toggles relative line numbers on and off
 function! NumberToggle()
   if(&relativenumber == 1)
@@ -152,26 +153,26 @@ set background=dark
 colorscheme solarized
 " Set font and size
 set guifont=Menlo:h14
-" Highlight the last searched pattern:
+
+" Highlight search terms
 set hlsearch
 
 " Color search words
 hi Search guibg=WhiteSmoke
 hi Search guifg=CornflowerBlue
 
+" find as you type search
+"set incsearch
+
 " Show matching brackets and parentheses
 set showmatch
-" Highlight search terms
-set hlsearch
 
 " Ignore case in search
 set ignorecase
 
-" find as you type search
-set incsearch
-
 "clearing highlighted search using "<space> /"
 nnoremap <silent> <leader>/ :nohlsearch<CR>
+
 "Make search always go the same direction
 noremap <silent> n /<CR>
 noremap <silent> N ?<CR>
@@ -245,9 +246,6 @@ set smarttab
 
 " Except not for python
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
-
-
-
 
 autocmd Filetype markdown setlocal wrap
 
