@@ -162,7 +162,7 @@ hi Search guibg=WhiteSmoke
 hi Search guifg=CornflowerBlue
 
 " find as you type search
-"set incsearch
+set incsearch
 
 " Show matching brackets and parentheses
 set showmatch
