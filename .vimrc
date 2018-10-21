@@ -22,6 +22,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/camelcasemotion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
+Plug 'ervandew/supertab'
 
 " Python
 Plug 'ambv/black'
