@@ -21,10 +21,12 @@ Plug 'scrooloose/nerdtree'
 " Vim commands and controls
 Plug 'vim-scripts/camelcasemotion'
 Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
 
 " Python
 Plug 'ambv/black'
 Plug 'nvie/vim-flake8'
+Plug 'davidhalter/jedi-vim'
 
 
 call plug#end()
@@ -393,6 +395,11 @@ augroup END
 "####################################################################
 "Plugin Configuration
 "####################################################################
+
+"###################################
+" Jedi
+"###################################
+let g:jedi#completions_command = "<C-b>"
 
 "###################################
 " NerdTree
