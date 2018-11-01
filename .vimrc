@@ -24,6 +24,9 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'ervandew/supertab'
 
+" SQL
+Plug 'shmup/vim-sql-syntax'
+
 " Python
 Plug 'ambv/black'
 Plug 'nvie/vim-flake8'
@@ -76,7 +79,6 @@ au FocusLost * silent! wa
 autocmd FileType gitcommit,mail,mkd,text set spell
 
 " Set headers
-autocmd FileType sql set filetype=sqlanywhere
 au BufRead,BufNewFile *.lookml set filetype=lookml
 autocmd FileType lookml set syntax=yaml
 
