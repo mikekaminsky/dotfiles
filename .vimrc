@@ -26,6 +26,7 @@ Plug 'ervandew/supertab'
 
 " SQL
 Plug 'shmup/vim-sql-syntax'
+Plug 'alcesleo/vim-uppercase-sql'
 
 " Python
 Plug 'ambv/black'
@@ -348,52 +349,6 @@ iabbrev reponse response
 " My names
 iabbrev @@  kaminsky.michael@gmail.com
 iabbrev myname  Michael Kaminsky
-
-" SQL keywords
-augroup sqlcaps
-  autocmd!
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> select SELECT
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> from FROM
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> case CASE
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> when WHEN
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> where WHERE
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> join JOIN
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> on ON
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> distinct DISTINCT
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> left LEFT
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> right RIGHT
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> outer OUTER
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> set SET
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> group GROUP
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> with WITH
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> and AND
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> or OR
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> order ORDER
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> between BETWEEN
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> max MAX
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> min MIN
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> interval INTERVAL
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> coalesce COALESCE
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> greatest GREATEST
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> as AS
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> end END
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> count COUNT
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> then THEN
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> is IS
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> not NOT
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> null NULL
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> else ELSE
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> by BY
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> sum SUM
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> drop DROP
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> table TABLE
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> begin BEGIN
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> commit COMMIT 
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> having HAVING
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> to TO
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> over OVER
-  autocmd FileType sql,sqlanywhere iabbrev <buffer> partition PARTITION
-augroup END
 
 "####################################################################
 "Plugin Configuration
