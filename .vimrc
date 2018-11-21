@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
 
 " Appearance
 Plug 'altercation/vim-colors-solarized'
+Plug 'junegunn/goyo.vim'
 
 " File navivation
 Plug 'junegunn/fzf'
