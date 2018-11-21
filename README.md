@@ -24,14 +24,6 @@ ln -s ~/workspace/dotfiles/dev-tmux.sh /usr/local/bin/dev-tmux.sh
 ln -s ~/workspace/dotfiles/.config/flake8 ~/.config/flake8
 ```
 
-Install submodules
-
-```
-cd ~/workspace/dotfiles
-git submodule sync
-git submodule update --init
-```
-
 Install other things (optional).
 ```
 #Install brew
@@ -39,7 +31,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 #Install CLI utilities
 brew install git
-brew install autoenv
+brew install direnv
 brew install postgresql
 brew install tig
 brew install python3
