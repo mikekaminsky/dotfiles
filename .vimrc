@@ -294,20 +294,12 @@ inoremap <Esc>Ol +
 inoremap <Esc>OS -
 inoremap <Esc>OM <Enter>
 
-"Paste with space before
-"nnoremap <C-p> a <esc>p
-
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 
 " Map cu to change to underscore
 nnoremap cu ct_
 nnoremap cU dT_s
-
-" Indent/unindent visual mode selection with tab/shift+tab
-" COMMENTED OUT DUE TO INCOMPATABILITY WITH SNIPMATE
-"vnoremap <tab> >gv
-"vnoremap <s-tab> <gv
 
 "Enable omni completion
 filetype plugin on
