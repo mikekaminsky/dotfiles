@@ -52,7 +52,7 @@ set ttyfast
 "###################################
 
 " Switch to visual bells from stupid beeps
-set vb 
+set vb
 
 " Have vim read changes from file as they happen
 set autoread
@@ -392,7 +392,7 @@ nmap <Leader>t :Files<CR>
 "###################################
 " The Silver Searcher
 "###################################
- 
+
 " Let Ack use Ag
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
