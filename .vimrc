@@ -32,7 +32,7 @@ Plug 'alcesleo/vim-uppercase-sql'
 " Python
 Plug 'ambv/black'
 Plug 'nvie/vim-flake8'
-Plug 'davidhalter/jedi-vim'
+"Plug 'davidhalter/jedi-vim'
 
 
 call plug#end()
@@ -382,8 +382,6 @@ nnoremap <Leader>c :Flake8<CR>
 " Fzf
 "###################################
 
-" TODO:
-" Make hitting these again close the quickfix window
 " Semicolon to fuzzy search buffers
 nmap ; :Buffers<CR>
 " Fuzzy Search files
