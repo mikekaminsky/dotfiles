@@ -406,21 +406,38 @@ command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--path-to-ignore .gitignor
 " Goyo
 "###################################
 
-" TODO: Have this undo-itself when called a second time
-" TODO: Figure out how to get this to set wrapping as well
+let goyo_on = 0
 function! ProseMode()
-  call goyo#execute(0, [])
-  set spell noci nosi noai nolist noshowmode noshowcmd
-  set complete+=s
-  set bg=light
-  if !has('gui_running')
-    let g:solarized_termcolors=256
+  if g:goyo_on == 0
+    let g:goyo_on = 1
+    let g:goyo_pre_settings =
+    \ { 'spell':    &spell,
+    \   'ci':       &ci,
+    \   'si':       &si,
+    \   'ai':       &ai,
+    \   'list':     &list,
+    \   'showmode': &showmode,
+    \   'showcmd':  &showcmd,
+    \   'wrap':     &wrap,
+    \   'complete': &complete
+    \}
+    call goyo#execute(0, [])
+    set spell noci nosi noai nolist noshowmode noshowcmd wrap
+    set complete+=s
+    set bg=light
+    colors solarized
+  elseif g:goyo_on == 1
+    let g:goyo_on = 0
+    call goyo#execute(0, [])
+    for [k, v] in items(g:goyo_pre_settings)
+      execute printf('let &%s = %s', k, string(v))
+    endfor
+    set bg=dark
+    colors solarized
   endif
-  colors solarized
 endfunction
-
 command! ProseMode call ProseMode()
-nmap <Leader>w :ProseMode<CR> 
+nmap <Leader>w :ProseMode<CR>
 
 "###################################
 "Source local .vimrc
