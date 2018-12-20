@@ -24,6 +24,11 @@ ln -s ~/workspace/dotfiles/dev-tmux.sh /usr/local/bin/dev-tmux.sh
 ln -s ~/workspace/dotfiles/.config/flake8 ~/.config/flake8
 ```
 
+Add filepath to the top of the finder window
+```
+$ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true; killall Finder
+```
+
 Install other things (optional).
 ```
 #Install brew
