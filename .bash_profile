@@ -56,9 +56,11 @@ parse_git_branch() {
 export -f parse_git_branch
 export PS1="\W \[\033[33m\]\$(parse_git_branch)∆†∆\[\033[00m\]\[\033[00m\] "
 
+# Load direnv
+eval "$(direnv hook bash)"
+
 # Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-source /usr/local/opt/autoenv/activate.sh
 
 # Python crap
 export PYTHONSTARTUP=$HOME/.pystartup
