@@ -32,7 +32,9 @@ Plug 'alcesleo/vim-uppercase-sql'
 " Python
 Plug 'ambv/black'
 Plug 'nvie/vim-flake8'
-"Plug 'davidhalter/jedi-vim'
+
+" R / Stan
+Plug 'maverickg/stan.vim'
 
 
 call plug#end()
@@ -46,6 +48,9 @@ filetype plugin indent on
 " Try to make vim go faster in TMUX
 set lazyredraw
 set ttyfast
+
+" Block remote code execution security hole.
+set nomodeline
 
 "###################################
 "System
@@ -357,7 +362,7 @@ let g:jedi#completions_command = "<C-b>"
 "###################################
 noremap \ :NERDTreeToggle<CR>
 noremap \| :NERDTreeFind<CR>
-let NERDTreeIgnore = ['\.pyc$','\.swp$']
+let NERDTreeIgnore = ['\.pyc$','\.sw*$']
 
 "###################################
 " NerdCommender
