@@ -14,6 +14,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'junegunn/goyo.vim'
 
+" Tmux / REPL
+Plug 'jpalardy/vim-slime'
+
 " File navivation
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -404,6 +407,15 @@ endif
 nnoremap <Leader>a :Ag <Space>
 
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--path-to-ignore .gitignore --ignore-dir .git/ --hidden', <bang>0)
+
+"###################################
+" Slime
+"###################################
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{top-right}"}
+" Don't prompt for configuration
+let g:slime_dont_ask_default = 1
+
 
 "###################################
 " Goyo
