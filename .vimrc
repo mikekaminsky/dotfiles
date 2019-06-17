@@ -16,6 +16,7 @@ Plug 'junegunn/goyo.vim'
 
 " Tmux / REPL
 Plug 'jpalardy/vim-slime'
+Plug 'christoomey/vim-tmux-navigator'
 
 " File navivation
 Plug 'junegunn/fzf'
@@ -112,6 +113,12 @@ set shortmess+=A
 set splitbelow
 set splitright
 
+" Simplify navigating between splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 "###################################
 "Environment
 "###################################
@@ -140,7 +147,7 @@ function! NumberToggle()
   endif
 endfunc
 
-nnoremap <C-h> :call NumberToggle()<cr>
+nnoremap <C-n> :call NumberToggle()<cr>
 
 "<leader>+l toggles drop line at cursor
 function! VertToggle()
@@ -269,12 +276,6 @@ inoremap jk <esc>
 
 " Allow for pasting multiple lines
 xnoremap p pgvy
-
-" Ctrl - j/k deletes blank line below/above, and Alt-j/k inserts.
-nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
-nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
-nnoremap <silent><D-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
-nnoremap <silent><D-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
 "Copy and paste to system clipboard with space y and space d
 vnoremap <Leader>y "+y
