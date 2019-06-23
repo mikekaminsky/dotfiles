@@ -72,6 +72,16 @@ set history=1000
 " Set leader to the spacebar
 let mapleader = "\<Space>"
 
+" Let's save undo info!
+if !isdirectory($HOME."/.vim")
+    call mkdir($HOME."/.vim", "", 0770)
+endif
+if !isdirectory($HOME."/.vim/undo-dir")
+    call mkdir($HOME."/.vim/undo-dir", "", 0700)
+endif
+set undodir=~/.vim/undo-dir
+set undofile
+
 " Making it so ; works like : for commands. Saves typing and
 " eliminates :W style typos due to lazy holding shift.
 nnoremap ; :
@@ -82,6 +92,9 @@ cnoremap WQ wq
 cnoremap wQ wq
 cnoremap Q q
 nnoremap Q <nop>
+
+" Instead of stumbling into ex mode, repeat the last macro used.
+nnoremap Q @@
 
 "Write every time window loses focus
 au FocusLost * silent! wa
@@ -185,12 +198,12 @@ hi Search guifg=CornflowerBlue
 
 " find as you type search
 set incsearch
+" With both on, searches with no capitals are case insensitive, while searches with a capital characters are case sensitive.
+set ignorecase
+set smartcase
 
 " Show matching brackets and parentheses
 set showmatch
-
-" Ignore case in search
-set ignorecase
 
 "clearing highlighted search using "<space> /"
 nnoremap <silent> <leader>/ :nohlsearch<CR>
@@ -336,6 +349,9 @@ inoremap \fp <C-R>=expand("%:p:h")<CR>
 
 " Copy path of file to clipboard for pasting into terminal.
 noremap <leader>k :let @* = expand("%:p")<CR>
+
+" ;1 will set the 'a mark at the point you are typing.
+inoremap ;1 <c-o>ma
 
 "###################################
 "Abbreviations
