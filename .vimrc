@@ -49,16 +49,16 @@ filetype on
 syntax on
 filetype plugin indent on
 
-" Try to make vim go faster in TMUX
-set lazyredraw
-set ttyfast
-
 " Block remote code execution security hole.
 set nomodeline
 
 "###################################
 "System
 "###################################
+"
+" Try to make vim go faster in TMUX
+set lazyredraw
+set ttyfast
 
 " Switch to visual bells from stupid beeps
 set vb
@@ -69,9 +69,6 @@ set autoread
 "Save lots of history
 set history=1000
 
-" Set leader to the spacebar
-let mapleader = "\<Space>"
-
 " Let's save undo info!
 if !isdirectory($HOME."/.vim")
     call mkdir($HOME."/.vim", "", 0770)
@@ -81,6 +78,150 @@ if !isdirectory($HOME."/.vim/undo-dir")
 endif
 set undodir=~/.vim/undo-dir
 set undofile
+
+"Write every time window loses focus
+au FocusLost * silent! wa
+
+"prevent vim from backing up crontabs
+set backupskip=/tmp/*,/private/tmp/*
+
+"When you move away from a buffer it will go into the background
+"it doesn't close the buffer when you close the window --needed for :Cdo
+set hidden
+
+"Prevent existing swap file warnings
+set shortmess+=A
+
+" Get the nice tab through menu
+set wildmenu
+
+"Enable omni completion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+set completeopt=longest,menuone
+
+"###################################
+"Search
+"###################################
+
+" Highlight search terms
+set hlsearch
+
+" find as you type search
+set incsearch
+
+" With both on, searches with no capitals are case insensitive, while searches with a capital characters are case sensitive.
+set ignorecase
+set smartcase
+
+" Show matching brackets and parentheses
+set showmatch
+
+" Color search words
+hi Search guibg=WhiteSmoke
+hi Search guifg=CornflowerBlue
+
+"clearing highlighted search using "<space> /"
+nnoremap <silent> <leader>/ :nohlsearch<CR>
+
+"Make search always go the same direction
+noremap <silent> n /<CR>
+noremap <silent> N ?<CR>
+
+"###################################
+"Navigation
+"###################################
+
+"Add splits below and to the right
+set splitbelow
+set splitright
+
+" Simplify navigating between splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+"Make it easier to navigate to first non-blank character in a line
+nnoremap <Leader>0 ^
+vnoremap <Leader>0 ^
+nnoremap H ^
+nnoremap L $
+
+"###################################
+"Appearance
+"###################################
+ 
+"Set colorscheme
+"Recommended: import solarized as your default colorscheme for terminal (see
+"more at https://github.com/altercation/solarized/tree/master/osx-terminal.app-colors-solarized
+set t_Co=256
+if !has('gui_running')
+  let g:solarized_termcolors=&t_Co
+  "let g:solarized_termtrans=1 " Use the default terminal background color
+endif
+set background=dark
+colorscheme solarized
+" Set font and size
+set guifont=Menlo:h14
+
+" Status line
+set laststatus=2 " Always show status line
+set statusline=%f " Path to the file
+set statusline+=%= " Switch to the right side
+set statusline+=%l " Current line
+set statusline+=/ " Separator
+set statusline+=%L " Total lines
+
+"Show the mode
+set showmode
+
+"Highlight the cursor line
+set cursorline
+
+"Show column and line number at bottom right
+set ruler
+
+"Relative line numbers
+set rnu
+
+" Display line numbers
+set number
+
+"###################################
+"File types an syntax
+"###################################
+"
+"Set spell check for text files
+autocmd FileType gitcommit,mail,mkd,text set spell
+
+" Set lookml filteype
+au BufRead,BufNewFile *.lookml set filetype=lookml
+
+" Make vim recognize . as keyword in R files
+augroup rperiod
+  autocmd!
+  autocmd FileType r set iskeyword-=.
+augroup END
+
+"Don't double-indent single line comments in c and c++
+au FileType c,cpp setlocal comments-=:// comments+=f://
+
+" Specify appropriate indenting for python
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
+
+" Wrap lines in markdown
+autocmd Filetype markdown setlocal wrap
+
+"###################################
+"Basic usability maps
+"###################################
+"
+" Set leader to the spacebar
+let mapleader = "\<Space>"
+
+" Map 'jk' to escape
+inoremap jk <esc>
 
 " Making it so ; works like : for commands. Saves typing and
 " eliminates :W style typos due to lazy holding shift.
@@ -96,175 +237,20 @@ nnoremap Q <nop>
 " Instead of stumbling into ex mode, repeat the last macro used.
 nnoremap Q @@
 
-"Write every time window loses focus
-au FocusLost * silent! wa
-
-"Set spell check for text files
-autocmd FileType gitcommit,mail,mkd,text set spell
-
-" Set headers
-au BufRead,BufNewFile *.lookml set filetype=lookml
 autocmd FileType lookml set syntax=yaml
-
-" Make vim recognize . as keyword in R files
-augroup rperiod
-  autocmd!
-  autocmd FileType r set iskeyword-=.
-augroup END
-
-"prevent vim from backing up crontabs
-set backupskip=/tmp/*,/private/tmp/*
-
-"When you move away from a buffer it will go into the background
-"it doesn't close the buffer when you close the window --needed for :Cdo
-set hidden
-
-"Prevent existing swap file warnings
-set shortmess+=A
-
-"Add splits below and to the right
-set splitbelow
-set splitright
-
-" Simplify navigating between splits
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-"###################################
-"Environment
-"###################################
-
-"Show the mode
-set showmode
-"Highlight the cursor line
-set cursorline
-"Show column and line number at bottom right
-set ruler
-"Relative line numbers
-set rnu
-
-" Get the nice tab through menu
-set wildmenu
-
-" Display line numbers
-set number
-
-"ctrl+h toggles relative line numbers on and off
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber
-  else
-    set relativenumber
-  endif
-endfunc
-
-nnoremap <C-n> :call NumberToggle()<cr>
-
-"<leader>+l toggles drop line at cursor
-function! VertToggle()
-  if(&colorcolumn)
-    set colorcolumn=
-  else
-    let thiscol = col('.')
-    echo thiscol
-    let &colorcolumn=thiscol
-  endif
-endfunc
-
-nnoremap <leader>l :call VertToggle()<cr>
-
-
-"Set colorscheme
-"Recommended: import solarized as your default colorscheme for terminal (see
-"more at https://github.com/altercation/solarized/tree/master/osx-terminal.app-colors-solarized
-set t_Co=256
-if !has('gui_running')
-  let g:solarized_termcolors=&t_Co
-  "let g:solarized_termtrans=1 " Use the default terminal background color
-endif
-set background=dark
-colorscheme solarized
-" Set font and size
-set guifont=Menlo:h14
-
-" Highlight search terms
-set hlsearch
-
-" Color search words
-hi Search guibg=WhiteSmoke
-hi Search guifg=CornflowerBlue
-
-" find as you type search
-set incsearch
-" With both on, searches with no capitals are case insensitive, while searches with a capital characters are case sensitive.
-set ignorecase
-set smartcase
-
-" Show matching brackets and parentheses
-set showmatch
-
-"clearing highlighted search using "<space> /"
-nnoremap <silent> <leader>/ :nohlsearch<CR>
-
-"Make search always go the same direction
-noremap <silent> n /<CR>
-noremap <silent> N ?<CR>
-
-"Show whitespace that includes trailing whitespace.
-highlight ExtraWhitespace ctermbg=darkgreen guibg=DarkCyan
-nnoremap <Leader>wn :match ExtraWhitespace /\s\+\%#\@<!$/<CR>
-nnoremap <Leader>wf :match<CR>
-autocmd BufWinEnter * call clearmatches()
-nnoremap <leader>rw :%s/\s\+$//
-
-function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
-endfunction
-nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
-autocmd BufWritePre *.py,*.js,*.sql :call <SID>StripTrailingWhitespaces()
-
-
-"Don't double-indent single line comments in c and c++
-au FileType c,cpp setlocal comments-=:// comments+=f://
-
-
-"Panic Button
-"Space f takes you to the last place you edited
-nnoremap <Leader>f `.
-
-" <space>ev splits and edits vimrc
-" <space>sv sources vimrc
-noremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" Status line
-set laststatus=2 " Always show status line
-set statusline=%f " Path to the file
-set statusline+=%= " Switch to the right side
-set statusline+=%l " Current line
-set statusline+=/ " Separator
-set statusline+=%L " Total lines
-
 
 "###################################
 "Editing
 "###################################
 " Copy indent from current line when starting a new line
 set autoindent
+
 " DON'T wrap long lines
 set nowrap
+
 " Break lines on words
 set linebreak
+
 " Make j,k,0,and $ behave the same way with wrapped lines
 noremap  <buffer> <silent> k gk
 noremap  <buffer> <silent> j gj
@@ -278,14 +264,6 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set smarttab
-
-" Except not for python
-autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
-
-autocmd Filetype markdown setlocal wrap
-
-" Map 'jk' to escape
-inoremap jk <esc>
 
 " Allow for pasting multiple lines
 xnoremap p pgvy
@@ -323,21 +301,10 @@ nnoremap Y y$
 nnoremap cu ct_
 nnoremap cU dT_s
 
-"Enable omni completion
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
-set completeopt=longest,menuone
-
 "Remap <C-P> to <C-p>
 "Use ctrl+p to autocomplete from insert mode
 inoremap <C-p> <C-P>
 inoremap <C-n> <C-N>
-
-"Make it easier to navigate to first non-blank character in a line
-nnoremap <Leader>0 ^
-vnoremap <Leader>0 ^
-nnoremap H ^
-nnoremap L $
 
 "use space j to provide the opposite of shift j
 noremap <Leader>j i<CR><Esc>
@@ -368,10 +335,68 @@ iabbrev reponse response
 iabbrev @@  kaminsky.michael@gmail.com
 iabbrev myname  Michael Kaminsky
 
+"###################################
+" Helpful custom functions
+"###################################
+
+"ctrl+h toggles relative line numbers on and off
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
+
+"<leader>+l toggles drop line at cursor
+function! VertToggle()
+  if(&colorcolumn)
+    set colorcolumn=
+  else
+    let thiscol = col('.')
+    echo thiscol
+    let &colorcolumn=thiscol
+  endif
+endfunc
+
+nnoremap <leader>l :call VertToggle()<cr>
+
+"Show whitespace that includes trailing whitespace.
+highlight ExtraWhitespace ctermbg=darkgreen guibg=DarkCyan
+nnoremap <Leader>wn :match ExtraWhitespace /\s\+\%#\@<!$/<CR>
+nnoremap <Leader>wf :match<CR>
+autocmd BufWinEnter * call clearmatches()
+nnoremap <leader>rw :%s/\s\+$//
+
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
+autocmd BufWritePre *.py,*.js,*.sql :call <SID>StripTrailingWhitespaces()
+
+"Panic Button
+"Space f takes you to the last place you edited
+nnoremap <Leader>f `.
+
+" <space>ev splits and edits vimrc
+" <space>sv sources vimrc
+noremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
 "####################################################################
 "Plugin Configuration
 "####################################################################
-
+ 
 "###################################
 " Jedi
 "###################################
