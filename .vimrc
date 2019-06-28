@@ -40,9 +40,7 @@ Plug 'nvie/vim-flake8'
 " R / Stan
 Plug 'maverickg/stan.vim'
 
-
 call plug#end()
-
 
 "filetype off
 filetype on
@@ -51,6 +49,10 @@ filetype plugin indent on
 
 " Block remote code execution security hole.
 set nomodeline
+
+" Set leader to the spacebar
+" NOTE: This needs to come before we map anything to leader
+let mapleader = "\<Space>"
 
 "###################################
 "System
@@ -216,9 +218,6 @@ autocmd Filetype markdown setlocal wrap
 "###################################
 "Basic usability maps
 "###################################
-"
-" Set leader to the spacebar
-let mapleader = "\<Space>"
 
 " Map 'jk' to escape
 inoremap jk <esc>
