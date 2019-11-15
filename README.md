@@ -40,12 +40,12 @@ brew install direnv
 brew install postgresql
 brew install tig
 brew install python3
-brew install r
 brew install ack
 brew install tmux
 brew install bash-completion
 brew install reattach-to-user-namespace
 brew install the_silver_searcher
+brew install fd
 
 # Get ready to python 
 pip3 install virtualenvwrapper

@@ -30,6 +30,11 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 alias hgrep='history|grep --color' # Search history
 
+# FZF
+# https://github.com/junegunn/fzf#tips
+# Requries https://github.com/sharkdp/fd
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+
 
 set completion-ignore-case on
 
