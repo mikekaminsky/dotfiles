@@ -130,6 +130,11 @@ nnoremap <silent> <leader>/ :nohlsearch<CR>
 noremap <silent> n /<CR>
 noremap <silent> N ?<CR>
 
+" Don't jump to the next (previous) occurrence of the highlighted word on
+" search
+nnoremap <silent> * :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+nnoremap <silent> # :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+
 "###################################
 "Navigation
 "###################################
@@ -267,7 +272,7 @@ set smarttab
 " Allow for pasting multiple lines
 xnoremap p pgvy
 
-"Copy and paste to system clipboard with space y and space d
+"Copy and paste to system clipboard with space y and space p
 vnoremap <Leader>y "+y
 vnoremap <Leader>d "+d
 nnoremap <Leader>p "+p
@@ -494,6 +499,8 @@ function! ProseMode()
 endfunction
 command! ProseMode call ProseMode()
 nmap <Leader>w :ProseMode<CR>
+
+
 
 "###################################
 "Source local .vimrc
