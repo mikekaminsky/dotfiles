@@ -10,6 +10,28 @@ Rename any dotfiles you are currently using (e.g., .rprofile, .vimrc, .bash_prof
 Create symlinks
 
 ```
+#Install brew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+```
+#Install CLI utilities
+brew install python3
+brew install r
+brew install fzf
+brew install git
+brew install direnv
+brew install postgresql
+brew install tig
+brew install ack
+brew install tmux
+brew install bash-completion
+brew install reattach-to-user-namespace
+brew install the_silver_searcher
+brew install fd
+```
+
+```
 ln -s workspace/dotfiles/vim ~/.vim
 ln -s workspace/dotfiles/.vimrc ~/.vimrc
 ln -s workspace/dotfiles/.bash_profile ~/.bash_profile
@@ -21,43 +43,12 @@ ln -s workspace/dotfiles/gitconfig ~/.gitconfig
 ln -s workspace/dotfiles/tmux.conf ~/.tmux.conf
 ln -s workspace/dotfiles/.bash_sessions_disable ~/.bash_sessions_disable
 ln -s ~/workspace/dotfiles/dev-tmux.sh /usr/local/bin/dev-tmux.sh
+mkdir ~/.config
 ln -s ~/workspace/dotfiles/.config/flake8 ~/.config/flake8
 ```
 
-Add filepath to the top of the finder window
 ```
-$ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true; killall Finder
-```
-
-Install other things (optional).
-```
-#Install brew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-#Install CLI utilities
-brew install git
-brew install direnv
-brew install postgresql
-brew install tig
-brew install python3
-brew install ack
-brew install tmux
-brew install bash-completion
-brew install reattach-to-user-namespace
-brew install the_silver_searcher
-brew install fd
-
 # Get ready to python 
+pip3 install virtualenv
 pip3 install virtualenvwrapper
-
-# R stuff
-git clone https://github.com/jalvesaq/colorout.git
-R CMD INSTALL colorout
 ```
-
-
-
-To Do:
-___________________
-
-1. Finish install.sh (set up links)

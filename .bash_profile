@@ -70,9 +70,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Python crap
 export PYTHONSTARTUP=$HOME/.pystartup
 
-# Ruby crap
-eval "$(rbenv init -)"
-
 # R crap
 export R_HISTFILE=~/.Rhistory
 
