@@ -35,7 +35,6 @@ alias hgrep='history|grep --color' # Search history
 # Requries https://github.com/sharkdp/fd
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
-
 set completion-ignore-case on
 
 # Handy functions
@@ -53,6 +52,13 @@ function pshead {
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
+# Don't expand tilde
+# Must come _after_ bash completion 
+# https://superuser.com/questions/95653/bash-shell-tab-completion-dont-expand-the
+_expand()
+{
+    return 0;
+}
 
 # Command Line Git Status
 parse_git_branch() {
@@ -60,6 +66,7 @@ parse_git_branch() {
 }
 export -f parse_git_branch
 export PS1="\W \[\033[33m\]\$(parse_git_branch)∆†∆\[\033[00m\]\[\033[00m\] "
+
 
 # Load direnv
 eval "$(direnv hook bash)"
@@ -82,8 +89,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # Postgres App (psql and postgreSQL server)
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin 
-
-
 # Source local configurations
 [ -f ~/.bashrc_local ] && . ~/.bashrc_local
 [ -f ~/.bash_profile.local ] && . ~/.bash_profile.local
