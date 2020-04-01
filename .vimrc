@@ -1,7 +1,5 @@
 " Michael's Vim Profile
 
-set nocp
-
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -28,6 +26,9 @@ Plug 'vim-scripts/camelcasemotion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'ervandew/supertab'
+
+" Linting
+Plug 'dense-analysis/ale'
 
 " SQL
 Plug 'shmup/vim-sql-syntax'
@@ -63,7 +64,7 @@ set lazyredraw
 set ttyfast
 
 " Switch to visual bells from stupid beeps
-set vb
+set visualbell
 
 " Have vim read changes from file as they happen
 set autoread
@@ -72,11 +73,11 @@ set autoread
 set history=1000
 
 " Let's save undo info!
-if !isdirectory($HOME."/.vim")
-    call mkdir($HOME."/.vim", "", 0770)
+if !isdirectory($HOME.'/.vim')
+    call mkdir($HOME.'/.vim', '', 0770)
 endif
-if !isdirectory($HOME."/.vim/undo-dir")
-    call mkdir($HOME."/.vim/undo-dir", "", 0700)
+if !isdirectory($HOME.'/.vim/undo-dir')
+    call mkdir($HOME.'/.vim/undo-dir', '', 0700)
 endif
 set undodir=~/.vim/undo-dir
 set undofile
@@ -190,7 +191,7 @@ set cursorline
 set ruler
 
 "Relative line numbers
-set rnu
+set relativenumber
 
 " Display line numbers
 set number
