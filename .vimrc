@@ -501,12 +501,28 @@ endfunction
 command! ProseMode call ProseMode()
 nmap <Leader>w :ProseMode<CR>
 
+"###################################
+" Ale
+"###################################
+
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'r': ['styler'],
+\   'python': ['black'],
+\}
+
+" Fix a file on <leader>b
+nmap <Leader>b :ALEFix<CR>
+
+" Lintr
+let g:ale_r_lintr_lint_package = 1
+let g:ale_r_lintr_options = 'with_defaults(line_length_linter(120))'
 
 
 "###################################
 "Source local .vimrc
 "###################################
-if filereadable($HOME . "/.vimrc.local")
+if filereadable($HOME . '/.vimrc.local')
   source ~/.vimrc.local
 endif
 
