@@ -100,3 +100,6 @@ if [ -f '/Users/michaelkaminsky/google-cloud-sdk/path.bash.inc' ]; then . '/User
 if [ -f '/Users/michaelkaminsky/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/michaelkaminsky/google-cloud-sdk/completion.bash.inc'; fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Silence macOS Catalina deprecation warning
+export BASH_SILENCE_DEPRECATION_WARNING=1
