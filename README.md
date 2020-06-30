@@ -14,7 +14,7 @@ Create symlinks
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-```
+```bash
 #Install CLI utilities
 brew install python3
 brew install r
@@ -31,7 +31,7 @@ brew install the_silver_searcher
 brew install fd
 ```
 
-```
+```bash
 ln -s workspace/dotfiles/vim ~/.vim
 ln -s workspace/dotfiles/.vimrc ~/.vimrc
 ln -s workspace/dotfiles/.bash_profile ~/.bash_profile
@@ -48,8 +48,13 @@ mkdir ~/.config
 ln -s ~/workspace/dotfiles/.config/flake8 ~/.config/flake8
 ```
 
-```
+```bash
 # Get ready to python 
 pip3 install virtualenv
 pip3 install virtualenvwrapper
+```
+
+```vim
+# Install vim plugins with 
+:PlugInstall
 ```
