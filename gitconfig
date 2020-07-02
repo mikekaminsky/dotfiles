@@ -26,3 +26,5 @@ unwip = !git log -n 1 | grep -q -c wip && git reset HEAD~1
 [user]
 	name = mikekaminsky
 	email = kaminsky.michael@gmail.com
+[core]
+	excludesfile = /Users/michael/.gitignore

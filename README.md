@@ -29,6 +29,7 @@ brew install bash-completion
 brew install reattach-to-user-namespace
 brew install the_silver_searcher
 brew install fd
+brew install pre-commit
 ```
 
 ```bash
@@ -40,6 +41,7 @@ ln -s workspace/dotfiles/.pystartup ~/.pystartup
 ln -s workspace/dotfiles/.psqlrc ~/.psqlrc
 ln -s workspace/dotfiles/.rprofile ~/.rprofile
 ln -s workspace/dotfiles/gitconfig ~/.gitconfig
+ln -s workspace/dotfiles/.gitignore ~/.gitignore
 ln -s workspace/dotfiles/tmux.conf ~/.tmux.conf
 ln -s workspace/dotfiles/.bash_sessions_disable ~/.bash_sessions_disable
 ln -s ~/workspace/dotfiles/dev-tmux.sh /usr/local/bin/dev-tmux.sh
@@ -48,13 +50,22 @@ mkdir ~/.config
 ln -s ~/workspace/dotfiles/.config/flake8 ~/.config/flake8
 ```
 
+Get ready to python 
+
 ```bash
-# Get ready to python 
 pip3 install virtualenv
 pip3 install virtualenvwrapper
 ```
 
+Install vim plugins with 
+
 ```vim
-# Install vim plugins with 
 :PlugInstall
 ```
+
+Register the global gitignore
+
+```bash
+git config --global core.excludesfile ~/.gitignore
+```bash
+
