@@ -62,10 +62,3 @@ Install vim plugins with
 ```vim
 :PlugInstall
 ```
-
-Register the global gitignore
-
-```bash
-git config --global core.excludesfile ~/.gitignore
-```bash
-

@@ -1,3 +1,5 @@
+[pull]
+	rebase = true
 [color]
 	ui = auto
 [push]
@@ -20,11 +22,14 @@
 [help]
 	format = html
 [alias]
-# A better git stash
-wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m 'wip'"
-unwip = !git log -n 1 | grep -q -c wip && git reset HEAD~1
+  # A better git stash
+  wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m 'wip'"
+  unwip = !git log -n 2 | grep -q -c wip && git reset HEAD~1
+  reb = !git rebase -i $(git merge-base HEAD master)
 [user]
 	name = mikekaminsky
 	email = kaminsky.michael@gmail.com
 [core]
 	excludesfile = /Users/michael/.gitignore
+[commit]
+	verbose = true
