@@ -35,7 +35,7 @@ Plug 'shmup/vim-sql-syntax'
 Plug 'alcesleo/vim-uppercase-sql'
 
 " Python
-Plug 'ambv/black'
+Plug 'psf/black'
 Plug 'nvie/vim-flake8'
 
 " R / Stan
