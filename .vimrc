@@ -516,7 +516,7 @@ nmap <Leader>b :ALEFix<CR>
 
 " Lintr
 let g:ale_r_lintr_lint_package = 1
-let g:ale_r_lintr_options = 'with_defaults(line_length_linter(120))'
+let g:ale_r_lintr_options = 'with_defaults(line_length_linter(100))'
 
 
 "###################################
