@@ -163,7 +163,9 @@ nnoremap L $
 "Set colorscheme
 "Recommended: import solarized as your default colorscheme for terminal (see
 "more at https://github.com/altercation/solarized/tree/master/osx-terminal.app-colors-solarized
-set t_Co=256
+"
+set term=xterm-256color
+
 if !has('gui_running')
   let g:solarized_termcolors=&t_Co
   "let g:solarized_termtrans=1 " Use the default terminal background color
