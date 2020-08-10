@@ -33,3 +33,5 @@
 	excludesfile = /Users/michael/.gitignore
 [commit]
 	verbose = true
+[remote "origin"]
+fetch = +refs/pull/*/head:refs/pull/origin/*
