@@ -36,6 +36,7 @@ brew install pre-commit
 ln -s workspace/dotfiles/vim ~/.vim
 ln -s workspace/dotfiles/.vimrc ~/.vimrc
 ln -s workspace/dotfiles/.bash_profile ~/.bash_profile
+ln -s workspace/dotfiles/.bashrc ~/.bashrc
 ln -s workspace/dotfiles/.inputrc ~/.inputrc
 ln -s workspace/dotfiles/.pystartup ~/.pystartup
 ln -s workspace/dotfiles/.psqlrc ~/.psqlrc
@@ -61,4 +62,9 @@ Install vim plugins with
 
 ```vim
 :PlugInstall
+```
+
+Set up additional fzf options
+```bash
+$(brew --prefix)/opt/fzf/install
 ```

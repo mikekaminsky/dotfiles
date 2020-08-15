@@ -89,6 +89,10 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # Postgres App (psql and postgreSQL server)
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin 
+
+# Source .bashrc
+source ~/.bashrc
+
 # Source local configurations
 [ -f ~/.bashrc_local ] && . ~/.bashrc_local
 [ -f ~/.bash_profile.local ] && . ~/.bash_profile.local
