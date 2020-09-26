@@ -30,7 +30,7 @@
 	name = mikekaminsky
 	email = kaminsky.michael@gmail.com
 [core]
-	excludesfile = /Users/michael/.gitignore
+	excludesfile = ~/.gitignore
 [commit]
 	verbose = true
 [remote "origin"]
