@@ -400,6 +400,19 @@ nnoremap <Leader>f `.
 noremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" Command for refreshing all buffers
+function! RefreshBuffers()
+  let curBuf=bufnr('%')
+  set noconfirm
+  bufdo e!
+  set confirm
+  execute 'buffer ' . curBuf
+endfunction
+
+command! RefreshBuffers call RefreshBuffers()
+nmap <Leader>ra :RefreshBuffers<CR>
+
+
 "####################################################################
 "Plugin Configuration
 "####################################################################
