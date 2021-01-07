@@ -15,15 +15,13 @@
 [status]
 	submoduleSummary = true
 	showUntrackedFiles = all
-[pull]
-	rebase = true
 [include]
   path = ~/.gitconfig.local
 [help]
 	format = html
 [alias]
   # A better git stash
-  wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m 'wip'"
+  wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -n -m 'wip'"
   unwip = !git log -n 2 | grep -q -c wip && git reset HEAD~1
   reb = !git rebase -i $(git merge-base HEAD master)
 [user]
