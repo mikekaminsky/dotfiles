@@ -35,7 +35,7 @@ Plug 'shmup/vim-sql-syntax'
 Plug 'alcesleo/vim-uppercase-sql'
 
 " Python
-Plug 'psf/black'
+Plug 'psf/black', { 'branch': 'stable' }
 Plug 'nvie/vim-flake8'
 
 " R / Stan
@@ -473,6 +473,15 @@ command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--path-to-ignore .gitignor
 "###################################
 " Slime
 "###################################
+" Get slime working with radian see:
+" https://github.com/randy3k/radian/issues/114
+" https://github.com/jpalardy/vim-slime/issues/211
+"
+function! _EscapeText_r(text)
+  call system("cat > ~/.slime_r", a:text)
+  return ["source('~/.slime_r', echo = TRUE, max.deparse.length = 4095)\r"]
+endfunction
+
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{top-right}"}
 " Don't prompt for configuration
@@ -517,6 +526,12 @@ command! ProseMode call ProseMode()
 nmap <Leader>w :ProseMode<CR>
 
 "###################################
+" Black
+"###################################
+
+let g:black_virtualenv="~/.vim_black"
+
+"###################################
 " Ale
 "###################################
 
@@ -530,7 +545,7 @@ let g:ale_fixers = {
 nmap <Leader>b :ALEFix<CR>
 
 " Lintr
-let g:ale_r_lintr_lint_package = 1
+let g:ale_r_lintr_lint_package = 0
 let g:ale_r_lintr_options = 'with_defaults(line_length_linter(100))'
 
 
