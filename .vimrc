@@ -43,6 +43,9 @@ Plug 'nvie/vim-flake8'
 " R / Stan
 Plug 'maverickg/stan.vim'
 
+" Git
+Plug 'tpope/vim-fugitive'
+
 call plug#end()
 
 "filetype off
@@ -418,6 +421,7 @@ nmap <Leader>ra :RefreshBuffers<CR>
 
 let g:rigel_airline = 1
 let g:airline_theme = 'rigel'
+let g:airline_powerline_fonts = 1
 
  
 "###################################
