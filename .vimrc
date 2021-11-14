@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
 " Appearance
 Plug 'altercation/vim-colors-solarized'
 Plug 'Rigellute/rigel'
+Plug 'vim-airline/vim-airline'
 Plug 'junegunn/goyo.vim'
 
 " Tmux / REPL
@@ -410,6 +411,14 @@ nmap <Leader>ra :RefreshBuffers<CR>
 "####################################################################
 "Plugin Configuration
 "####################################################################
+
+"###################################
+" Airline
+"###################################
+
+let g:rigel_airline = 1
+let g:airline_theme = 'rigel'
+
  
 "###################################
 " Jedi
