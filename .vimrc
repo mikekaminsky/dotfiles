@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 
 " Appearance
 Plug 'altercation/vim-colors-solarized'
+Plug 'Rigellute/rigel'
 Plug 'junegunn/goyo.vim'
 
 " Tmux / REPL
@@ -161,19 +162,12 @@ nnoremap L $
 "###################################
  
 "Set colorscheme
-"Recommended: import solarized as your default colorscheme for terminal (see
-"more at https://github.com/altercation/solarized/tree/master/osx-terminal.app-colors-solarized
-"
-set term=xterm-256color
 
-if !has('gui_running')
-  let g:solarized_termcolors=&t_Co
-  "let g:solarized_termtrans=1 " Use the default terminal background color
-endif
-set background=dark
-colorscheme solarized
-" Set font and size
-set guifont=Menlo:h14
+set term=xterm-true-color
+set termguicolors
+syntax enable
+syntax on
+colorscheme rigel
 
 " Status line
 set laststatus=2 " Always show status line
