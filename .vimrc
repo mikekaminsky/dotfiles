@@ -422,6 +422,13 @@ let g:rigel_airline = 1
 let g:airline_theme = 'rigel'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
+let g:airline_section_z = '%2l/%L☰%2v'
+let g:airline#extensions#default#section_truncate_width = {
+    \ 'warning': 80,
+    \ 'error': 80,
+    \ 'x': 80,
+    \ 'y': 80}
  
 "###################################
 " Jedi
