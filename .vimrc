@@ -9,7 +9,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Appearance
-Plug 'altercation/vim-colors-solarized'
 Plug 'Rigellute/rigel'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/goyo.vim'
@@ -168,6 +167,7 @@ nnoremap L $
 "Set colorscheme
 
 set termguicolors
+set term=xterm-256color
 syntax enable
 syntax on
 colorscheme rigel
