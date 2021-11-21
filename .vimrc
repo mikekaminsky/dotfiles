@@ -421,7 +421,7 @@ nmap <Leader>ra :RefreshBuffers<CR>
 let g:rigel_airline = 1
 let g:airline_theme = 'rigel'
 let g:airline_powerline_fonts = 1
-
+let g:airline#extensions#tabline#enabled = 1
  
 "###################################
 " Jedi
