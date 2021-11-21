@@ -167,7 +167,6 @@ nnoremap L $
  
 "Set colorscheme
 
-set term=xterm-true-color
 set termguicolors
 syntax enable
 syntax on
