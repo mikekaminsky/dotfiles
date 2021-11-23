@@ -37,6 +37,7 @@ Plug 'alcesleo/vim-uppercase-sql'
 
 " Python
 Plug 'psf/black', { 'branch': 'stable' }
+"Plug 'psf/black'
 Plug 'nvie/vim-flake8'
 
 " R / Stan
@@ -429,6 +430,10 @@ let g:airline#extensions#default#section_truncate_width = {
     \ 'error': 80,
     \ 'x': 80,
     \ 'y': 80}
+
+" buffer "tab" navigation
+nnoremap <leader><tab> :bnext<CR>
+nnoremap <leader><S-tab> :bprevious<CR>
  
 "###################################
 " Jedi
@@ -542,7 +547,7 @@ nmap <Leader>w :ProseMode<CR>
 " Black
 "###################################
 
-let g:black_virtualenv="~/.vim_black"
+let g:black_virtualenv="~/.virtualenvs/black"
 
 "###################################
 " Ale
