@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
 " Appearance
 Plug 'Rigellute/rigel'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/goyo.vim'
 
 " Tmux / REPL
@@ -19,7 +20,8 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " File navivation
 Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'  
+
 Plug 'scrooloose/nerdtree'
 
 " Vim commands and controls
@@ -172,6 +174,8 @@ set term=xterm-256color
 syntax enable
 syntax on
 colorscheme rigel
+
+"hi SatusLineNC ctermbg=white ctermfg=white
 
 " Status line
 set laststatus=2 " Always show status line
@@ -419,26 +423,22 @@ nmap <Leader>ra :RefreshBuffers<CR>
 " Airline
 "###################################
 
-let g:rigel_airline = 1
-let g:airline_theme = 'rigel'
+let g:airline_theme='fruit_punch'
+
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-let g:airline_section_z = '%2l/%L☰%2v'
 let g:airline#extensions#default#section_truncate_width = {
     \ 'warning': 80,
     \ 'error': 80,
+    \ 'a': 80,
+    \ 'b': 80,
     \ 'x': 80,
     \ 'y': 80}
 
 " buffer "tab" navigation
 nnoremap <leader><tab> :bnext<CR>
 nnoremap <leader><S-tab> :bprevious<CR>
- 
-"###################################
-" Jedi
-"###################################
-let g:jedi#completions_command = "<C-b>"
 
 "###################################
 " NerdTree
@@ -563,8 +563,8 @@ let g:ale_fixers = {
 nmap <Leader>b :ALEFix<CR>
 
 " Lintr
-let g:ale_r_lintr_lint_package = 0
-let g:ale_r_lintr_options = 'with_defaults(line_length_linter(100))'
+"let g:ale_r_lintr_lint_package = 0
+"let g:ale_r_lintr_options = 'with_defaults(line_length_linter(100))'
 
 
 "###################################
@@ -574,4 +574,4 @@ if filereadable($HOME . '/.vimrc.local')
   source ~/.vimrc.local
 endif
 
-let python_highlight_all = 1
+"let python_highlight_all = 1
