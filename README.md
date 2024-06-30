@@ -35,6 +35,8 @@ brew install reattach-to-user-namespace
 brew install the_silver_searcher
 brew install fd
 brew install pre-commit
+brew install virtualenv
+brew install virtualenvwrapper
 ```
 
 ```bash
@@ -54,13 +56,6 @@ ln -s ~/workspace/dotfiles/dev-tmux.sh /usr/local/bin/dev-tmux.sh
 ln -s ~/workspace/dotfiles/aws-ssh.sh /usr/local/bin/aws-ssh.sh
 mkdir ~/.config
 ln -s ~/workspace/dotfiles/.config/flake8 ~/.config/flake8
-```
-
-Get ready to python 
-
-```bash
-pip3 install virtualenv
-pip3 install virtualenvwrapper
 ```
 
 Install powerline fonts
