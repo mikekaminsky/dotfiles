@@ -1,4 +1,9 @@
-#Michael's Dotfiles
+# Michael's Dotfiles
+
+Things to note:
+* This assumes you're using the `bash` shell
+* For the vim colorschemes to work, you need a terminal emulator (like iterm2)
+
 
 To Install:
 ___________________
