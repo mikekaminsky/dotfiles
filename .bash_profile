@@ -1,4 +1,7 @@
 # Handy Aliases
+ 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+ 
 export EDITOR="vim"
 alias gs="git status"
 alias ga="git add"
@@ -85,7 +88,8 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+source /opt/homebrew/bin/virtualenvwrapper.sh
+
 
 # Postgres App (psql and postgreSQL server)
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin 
@@ -109,3 +113,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+

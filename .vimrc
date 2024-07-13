@@ -175,6 +175,12 @@ syntax enable
 syntax on
 colorscheme rigel
 
+augroup tune_colors | au!
+    au ColorScheme * hi Cursor guibg=red guifg=white
+augroup END
+
+
+
 "hi SatusLineNC ctermbg=white ctermfg=white
 
 " Status line
@@ -224,6 +230,9 @@ autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 
 " Wrap lines in markdown
 autocmd Filetype markdown setlocal wrap
+
+" Turn off code folding
+set nofoldenable
 
 "###################################
 "Basic usability maps
@@ -504,7 +513,6 @@ let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{top-right}"}
 " Don't prompt for configuration
 let g:slime_dont_ask_default = 1
-
 
 "###################################
 " Goyo
