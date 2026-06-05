@@ -85,7 +85,7 @@ export R_HISTFILE=~/.Rhistory
 
 # Set up virtual environments
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+export VIRTUALENVWRAPPER_VIRTUALENV=/opt/homebrew/bin/virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source /opt/homebrew/bin/virtualenvwrapper.sh
@@ -101,12 +101,6 @@ source ~/.bashrc
 [ -f ~/.bashrc_local ] && . ~/.bashrc_local
 [ -f ~/.bash_profile.local ] && . ~/.bash_profile.local
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/michaelkaminsky/google-cloud-sdk/path.bash.inc' ]; then . '/Users/michaelkaminsky/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/michaelkaminsky/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/michaelkaminsky/google-cloud-sdk/completion.bash.inc'; fi
-
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Silence macOS Catalina deprecation warning
@@ -114,6 +108,11 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/michael/google-cloud-sdk/path.bash.inc' ]; then . '/Users/michael/google-cloud-sdk/path.bash.inc'; fi
 
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/michael/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/michael/google-cloud-sdk/completion.bash.inc'; fi
 
+. "$HOME/.local/bin/env"
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"

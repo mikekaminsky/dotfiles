@@ -5,3 +5,5 @@ vim/plugged
 vim/black
 vim/undo-dir/
 .envrc
+
+**/.claude/settings.local.json
