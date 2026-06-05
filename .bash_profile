@@ -74,9 +74,6 @@ export PS1="\W \[\033[33m\]\$(parse_git_branch)∆†∆\[\033[00m\]\[\033[00m\]
 # Load direnv
 eval "$(direnv hook bash)"
 
-# Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 # Python crap
 export PYTHONSTARTUP=$HOME/.pystartup
 
@@ -84,15 +81,12 @@ export PYTHONSTARTUP=$HOME/.pystartup
 export R_HISTFILE=~/.Rhistory
 
 # Set up virtual environments
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
 export VIRTUALENVWRAPPER_VIRTUALENV=/opt/homebrew/bin/virtualenv
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source /opt/homebrew/bin/virtualenvwrapper.sh
 
-
-# Postgres App (psql and postgreSQL server)
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin 
 
 # Source .bashrc
 source ~/.bashrc
@@ -106,13 +100,10 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Silence macOS Catalina deprecation warning
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/michael/google-cloud-sdk/path.bash.inc' ]; then . '/Users/michael/google-cloud-sdk/path.bash.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/google-cloud-sdk/path.bash.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/michael/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/michael/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/google-cloud-sdk/completion.bash.inc"; fi
 
-. "$HOME/.local/bin/env"
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
